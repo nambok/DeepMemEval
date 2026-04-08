@@ -122,7 +122,7 @@ The `difficulty` field is either `"explicit-timestamp"` (calendar date in questi
 | Belief Update | 100 | Mostly 2-step chains (easy), some 3-step (medium) |
 | Cascade Propagation | 80 | Depth-1 dependency chains |
 | Noise Resistance | 80 | 40 light (20 filler sessions), 40 heavy (40 filler sessions) |
-| Temporal Belief | 80 | ~50% explicit timestamp, ~50% relative reference |
+| Temporal Belief | 80 | ~60% explicit timestamp, ~40% relative reference |
 | Delta Efficiency | 80 | 20-turn conversations measuring token efficiency |
 | Uncertainty Abstention | 80 | Partially-invalidated dependent beliefs, unique contextual answers |
 

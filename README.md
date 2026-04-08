@@ -91,7 +91,7 @@ Question: "What editor was the user using in April?"
 ✅ Correct: "Neovim"
 ```
 
-All scenarios use explicit timestamps — the question specifies a month/year and the system must return what was believed at that time, not the current state. Approximately half use relative references ("before switching to X") instead of calendar dates, testing whether the system can resolve temporal relationships from context.
+All scenarios use explicit timestamps — the question specifies a month/year and the system must return what was believed at that time, not the current state. About 40% use relative references ("before switching to X") instead of calendar dates, testing whether the system can resolve temporal relationships from context.
 
 #### 5. Delta Efficiency (80 scenarios)
 
