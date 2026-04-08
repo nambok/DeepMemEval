@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "deepmemeval"
+version = "0.1.0"
+description = "Benchmarking belief management, memory quality, and context efficiency in AI agent memory systems"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Nam Rodriguez", email = "nambok@gmail.com"},
+]
+
+dependencies = [
+    "openai>=1.0",
+    "numpy>=1.24",
+    "tqdm>=4.65",
+    "backoff>=2.2",
+]
+
+[project.optional-dependencies]
+baselines = [
+    "chromadb>=0.4",
+]
+
+[project.urls]
+Repository = "https://github.com/nambok/DeepMemEval"
