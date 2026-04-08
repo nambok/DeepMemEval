@@ -36,7 +36,7 @@ Generate realistic multi-session conversations:
 ### Phase 4: Noise Injection
 
 For noise-resistance scenarios:
-- Filler sessions sourced from ShareGPT and UltraChat (same as LongMemEval)
+- Filler sessions sourced from realistic conversational data (ShareGPT, UltraChat)
 - Signal-to-noise ratio controlled per scenario
 - Automated check: no filler session accidentally contains answer information
 - Distractor facts injected at controlled similarity to real facts

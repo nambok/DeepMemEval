@@ -1,7 +1,6 @@
 """DeepMemEval evaluation script.
 
 Evaluates system responses against ground truth using GPT-4o as judge.
-Follows LongMemEval's evaluation methodology.
 
 Usage:
     python evaluate.py --judge gpt-4o --results results/system.json --reference data/deepmemeval_500.json

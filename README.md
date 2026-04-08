@@ -6,17 +6,15 @@
 
 ## Overview
 
-DeepMemEval is a benchmark for evaluating AI agent memory systems on capabilities that [LongMemEval](https://github.com/xiaowu0162/LongMemEval) (ICLR 2025) does not test: belief management, memory quality under noise, temporal belief tracking, cascade propagation, context efficiency, and epistemic uncertainty.
+DeepMemEval is a benchmark for evaluating AI agent memory systems on capabilities that existing retrieval benchmarks do not test: belief management, memory quality under noise, temporal belief tracking, cascade propagation, context efficiency, and epistemic uncertainty.
 
-LongMemEval asks: **"Can you find the right memory?"** (retrieval accuracy from clean, static histories)
+Existing memory benchmarks ask: **"Can you find the right memory?"** (retrieval accuracy from clean, static histories)
 
 DeepMemEval asks: **"Is what you stored correct, current, and efficiently delivered?"** (memory quality under real-world conditions)
 
-A complete memory system should score well on **both**.
-
 ## Why DeepMemEval?
 
-LongMemEval evaluates a simplified scenario:
+Current memory benchmarks evaluate a simplified scenario:
 
 - Fresh database per question (no accumulated noise)
 - Static facts (no evolving beliefs)
@@ -43,7 +41,7 @@ In real agent deployments, facts change, noise accumulates, context windows have
 
 Multi-session conversations where user facts are stated and later updated, sometimes multiple times.
 
-**Key difference from LongMemEval's `knowledge-update` category**: LongMemEval accepts responses that include stale information alongside the updated answer. DeepMemEval requires returning **only** the current belief. Returning stale data is a failure.
+**Strict belief update evaluation**: Unlike benchmarks that accept responses including stale information alongside the updated answer, DeepMemEval requires returning **only** the current belief. Returning stale data is a failure.
 
 ```
 Session 1 (Jan): "I'm using PostgreSQL for our main database"
@@ -111,13 +109,13 @@ Sub-categories: Partially invalidated (20), conflicting sources (20), knowledge 
 
 ## Methodology
 
-DeepMemEval follows LongMemEval's evaluation methodology for comparability.
+DeepMemEval uses a rigorous, reproducible evaluation methodology.
 
 ### Judge
 
 - **Model**: `gpt-4o` (`temperature=0`, `max_tokens=10`, `seed=42`)
 - **Scoring**: Binary yes/no per scenario
-- **Per-category prompt templates** following LongMemEval's pattern
+- **Per-category prompt templates** tailored to each evaluation dimension
 
 ### Reproducibility
 
@@ -226,16 +224,6 @@ See `dataset_generation/` for the full pipeline:
 3. **Conversation generation** — LLM-generated sessions with human editing
 4. **Noise injection** — filler sessions from ShareGPT/UltraChat
 5. **Validation** — human evaluation on sample, inter-annotator agreement > 0.9
-
-## Relationship to LongMemEval
-
-| | LongMemEval | DeepMemEval |
-|---|---|---|
-| Published | ICLR 2025 | 2026 |
-| Tests | Retrieval accuracy | Memory quality and belief management |
-| Data | Static conversation histories | Evolving belief timelines |
-| Per-question state | Fresh DB, clean slate | Accumulated state across scenarios |
-| Core question | "Can you find it?" | "Is what you stored correct and current?" |
 
 ## Citation
 

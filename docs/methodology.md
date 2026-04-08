@@ -2,13 +2,13 @@
 
 ## Evaluation Standards
 
-DeepMemEval follows the evaluation methodology established by LongMemEval (ICLR 2025) to ensure comparability and credibility across the AI agent memory benchmark ecosystem.
+DeepMemEval uses a rigorous, reproducible evaluation methodology designed for credibility and transparency.
 
 ## Judge Configuration
 
 | Parameter | Value | Rationale |
 |-----------|-------|-----------|
-| Model | `gpt-4o-2024-08-06` | Same as LongMemEval |
+| Model | `gpt-4o-2024-08-06` | Strong reasoning, widely available |
 | Temperature | `0` | Deterministic evaluation |
 | Max tokens | `10` | Binary yes/no response only |
 | Seed | `42` | Cross-run reproducibility |

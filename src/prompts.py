@@ -1,7 +1,6 @@
 """Judge prompt templates for each DeepMemEval category.
 
-Follows LongMemEval's pattern: per-category prompt templates,
-GPT-4o judge, temperature=0, binary yes/no.
+Per-category prompt templates with GPT-4o judge, temperature=0, binary yes/no.
 """
 
 JUDGE_PROMPTS = {
