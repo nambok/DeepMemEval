@@ -65,9 +65,16 @@ def generate_belief_update_scenarios(persona: dict) -> list:
     timeline = persona["timeline"]
 
     # Find facts with supersedes chains
-    for i, entry in enumerate(timeline):
+    # Only generate one scenario per category — use the LONGEST chain ending at the latest entry
+    seen_categories = set()
+    # Process in reverse so we hit the latest supersession first
+    for i in range(len(timeline) - 1, -1, -1):
+        entry = timeline[i]
         if "supersedes" not in entry:
             continue
+        if entry["category"] in seen_categories:
+            continue
+        seen_categories.add(entry["category"])
 
         chain = [entry]
         idx = entry["supersedes"]
@@ -175,8 +182,15 @@ def generate_noise_scenarios(persona: dict) -> list:
     scenarios = []
     timeline = persona["timeline"]
 
-    # Pick a stable fact (no supersedes)
-    stable_facts = [t for t in timeline if "supersedes" not in t and t["category"] not in ("name", "team")]
+    # Pick a truly stable fact — not superseded and not the TARGET of any supersession
+    superseded_indices = {t["supersedes"] for t in timeline if "supersedes" in t}
+    stable_facts = [
+        t for i, t in enumerate(timeline)
+        if "supersedes" not in t
+        and "depends_on" not in t
+        and t["category"] not in ("name", "team")
+        and i not in superseded_indices
+    ]
     if not stable_facts:
         return []
 
@@ -218,9 +232,15 @@ def generate_temporal_scenarios(persona: dict) -> list:
     scenarios = []
     timeline = persona["timeline"]
 
-    for i, entry in enumerate(timeline):
+    # One scenario per category — use the longest chain
+    seen_categories = set()
+    for i in range(len(timeline) - 1, -1, -1):
+        entry = timeline[i]
         if "supersedes" not in entry:
             continue
+        if entry["category"] in seen_categories:
+            continue
+        seen_categories.add(entry["category"])
 
         chain = [entry]
         idx = entry["supersedes"]
@@ -333,11 +353,16 @@ def generate_uncertainty_scenarios(persona: dict) -> list:
             make_session("s003", latest_root["date"], latest_root["fact"], "Big change!"),
         ]
 
+        # Extract a meaningful tool name from the fact for the question
+        # e.g. "Uses pytest for all backend tests" -> "pytest"
+        fact_words = entry["fact"].split()
+        tool_name = fact_words[1] if len(fact_words) > 1 else fact_words[0]
+
         scenarios.append({
             "scenario_id": f"uncertain-{persona['id']}-{entry['category']}",
             "scenario_type": "uncertainty-abstention",
             "conversation_history": history,
-            "question": f"Does {persona['name']} still use {entry['fact'].split(' ')[-1]} for {entry['category'].replace('_', ' ')}?",
+            "question": f"Does {persona['name']} still use {tool_name} for {entry['category'].replace('_', ' ')}?",
             "expected_answer": "Uncertain",
             "metadata": {
                 "uncertainty_reason": f"Root fact changed ({original_root['fact']} → {latest_root['fact']}), dependent belief '{entry['fact']}' was never explicitly updated",
