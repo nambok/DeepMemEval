@@ -1,0 +1,5769 @@
+[
+  {
+    "scenario_id": "belief-p001-database",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses PostgreSQL for the main application database. Starting a new SaaS project."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you uses postgresql for the main application database."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-02-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to SQLite for simplicity. Realized the app doesn't need a full RDBMS yet."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you switched to sqlite for simplicity."
+          }
+        ]
+      }
+    ],
+    "question": "What database does Alex Chen currently use?",
+    "expected_answer": "Switched to SQLite for simplicity",
+    "metadata": {
+      "stale_answers": [
+        "Uses PostgreSQL for the main application database"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Uses PostgreSQL for the main application database",
+          "valid_from": "2025-01-10",
+          "valid_until": "2025-02-15",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Switched to SQLite for simplicity",
+          "valid_from": "2025-02-15",
+          "valid_until": null,
+          "source_session": "s002"
+        }
+      ],
+      "update_count": 1,
+      "difficulty": "easy"
+    }
+  },
+  {
+    "scenario_id": "belief-p001-database",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses PostgreSQL for the main application database. Starting a new SaaS project."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you uses postgresql for the main application database."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-02-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to SQLite for simplicity. Realized the app doesn't need a full RDBMS yet."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you switched to sqlite for simplicity."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-04-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Migrated to DuckDB for analytics workloads. Added analytics features."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you migrated to duckdb for analytics workloads."
+          }
+        ]
+      }
+    ],
+    "question": "What database does Alex Chen currently use?",
+    "expected_answer": "Migrated to DuckDB for analytics workloads",
+    "metadata": {
+      "stale_answers": [
+        "Uses PostgreSQL for the main application database",
+        "Switched to SQLite for simplicity"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Uses PostgreSQL for the main application database",
+          "valid_from": "2025-01-10",
+          "valid_until": "2025-02-15",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Switched to SQLite for simplicity",
+          "valid_from": "2025-02-15",
+          "valid_until": "2025-04-01",
+          "source_session": "s002"
+        },
+        {
+          "fact": "Migrated to DuckDB for analytics workloads",
+          "valid_from": "2025-04-01",
+          "valid_until": null,
+          "source_session": "s003"
+        }
+      ],
+      "update_count": 2,
+      "difficulty": "medium"
+    }
+  },
+  {
+    "scenario_id": "belief-p001-language",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Building the backend in Python with Django"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you building the backend in python with django."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-03-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Rewrote the backend in Go. Python was too slow for their throughput needs."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you rewrote the backend in go."
+          }
+        ]
+      }
+    ],
+    "question": "What language does Alex Chen currently use?",
+    "expected_answer": "Rewrote the backend in Go",
+    "metadata": {
+      "stale_answers": [
+        "Building the backend in Python with Django"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Building the backend in Python with Django",
+          "valid_from": "2025-01-10",
+          "valid_until": "2025-03-10",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Rewrote the backend in Go",
+          "valid_from": "2025-03-10",
+          "valid_until": null,
+          "source_session": "s002"
+        }
+      ],
+      "update_count": 1,
+      "difficulty": "easy"
+    }
+  },
+  {
+    "scenario_id": "belief-p001-editor",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses VS Code as primary editor"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you uses vs code as primary editor."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-02-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Neovim. Wanted a terminal-native workflow."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you switched to neovim."
+          }
+        ]
+      }
+    ],
+    "question": "What editor does Alex Chen currently use?",
+    "expected_answer": "Switched to Neovim",
+    "metadata": {
+      "stale_answers": [
+        "Uses VS Code as primary editor"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Uses VS Code as primary editor",
+          "valid_from": "2025-01-10",
+          "valid_until": "2025-02-20",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Switched to Neovim",
+          "valid_from": "2025-02-20",
+          "valid_until": null,
+          "source_session": "s002"
+        }
+      ],
+      "update_count": 1,
+      "difficulty": "easy"
+    }
+  },
+  {
+    "scenario_id": "belief-p001-editor",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses VS Code as primary editor"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you uses vs code as primary editor."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-02-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Neovim. Wanted a terminal-native workflow."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you switched to neovim."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-05-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Back to VS Code. Neovim config was too much maintenance."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you back to vs code."
+          }
+        ]
+      }
+    ],
+    "question": "What editor does Alex Chen currently use?",
+    "expected_answer": "Back to VS Code",
+    "metadata": {
+      "stale_answers": [
+        "Uses VS Code as primary editor",
+        "Switched to Neovim"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Uses VS Code as primary editor",
+          "valid_from": "2025-01-10",
+          "valid_until": "2025-02-20",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Switched to Neovim",
+          "valid_from": "2025-02-20",
+          "valid_until": "2025-05-01",
+          "source_session": "s002"
+        },
+        {
+          "fact": "Back to VS Code",
+          "valid_from": "2025-05-01",
+          "valid_until": null,
+          "source_session": "s003"
+        }
+      ],
+      "update_count": 2,
+      "difficulty": "medium"
+    }
+  },
+  {
+    "scenario_id": "cascade-p001-testing",
+    "scenario_type": "cascade-propagation",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Building the backend in Python with Django"
+          },
+          {
+            "role": "assistant",
+            "content": "Sounds good, building the backend in python with django."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses pytest for all backend tests"
+          },
+          {
+            "role": "assistant",
+            "content": "Makes sense given your setup."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-03-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Rewrote the backend in Go. Python was too slow for their throughput needs"
+          },
+          {
+            "role": "assistant",
+            "content": "That's a big change! Rewrote the backend in Go."
+          }
+        ]
+      }
+    ],
+    "question": "What testing does Alex Chen use for their backend?",
+    "expected_answer": "Uncertain \u2014 Uses pytest for all backend tests was specific to Building the backend in Python with Django, but they rewrote the backend in go",
+    "metadata": {
+      "root_change": "Building the backend in Python with Django \u2192 Rewrote the backend in Go",
+      "old_dependent": "Uses pytest for all backend tests",
+      "dependency_chain": [
+        {
+          "fact": "Uses pytest for all backend tests",
+          "depends_on": "Building the backend in Python with Django"
+        }
+      ],
+      "chain_depth": 1
+    }
+  },
+  {
+    "scenario_id": "cascade-p001-orm",
+    "scenario_type": "cascade-propagation",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Building the backend in Python with Django"
+          },
+          {
+            "role": "assistant",
+            "content": "Sounds good, building the backend in python with django."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Django ORM for database migrations"
+          },
+          {
+            "role": "assistant",
+            "content": "Makes sense given your setup."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-03-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Rewrote the backend in Go. Python was too slow for their throughput needs"
+          },
+          {
+            "role": "assistant",
+            "content": "That's a big change! Rewrote the backend in Go."
+          }
+        ]
+      }
+    ],
+    "question": "What orm does Alex Chen use for their backend?",
+    "expected_answer": "Uncertain \u2014 Uses Django ORM for database migrations was specific to Building the backend in Python with Django, but they rewrote the backend in go",
+    "metadata": {
+      "root_change": "Building the backend in Python with Django \u2192 Rewrote the backend in Go",
+      "old_dependent": "Uses Django ORM for database migrations",
+      "dependency_chain": [
+        {
+          "fact": "Uses Django ORM for database migrations",
+          "depends_on": "Building the backend in Python with Django"
+        }
+      ],
+      "chain_depth": 1
+    }
+  },
+  {
+    "scenario_id": "noise-p001-database",
+    "scenario_type": "noise-resistance",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between a stack and a queue?"
+          },
+          {
+            "role": "assistant",
+            "content": "A stack is LIFO (last in, first out) \u2014 think of a stack of plates. A queue is FIFO (first in, first out) \u2014 like a line at a store."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me write a regex to match email addresses?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Here's a common pattern: `^[\\w.-]+@[\\w.-]+\\.\\w+$`. Want me to explain each part?"
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-01-14",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's a good commit message format?"
+          },
+          {
+            "role": "assistant",
+            "content": "A common convention is: `type(scope): description`. For example: `fix(auth): handle expired tokens`. Keep the subject line under 72 characters."
+          }
+        ]
+      },
+      {
+        "session_id": "s004",
+        "date": "2025-01-16",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its surrounding scope. Even after the outer function returns, the inner function retains access to those variables."
+          }
+        ]
+      },
+      {
+        "session_id": "s005",
+        "date": "2025-01-18",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its surrounding scope. Even after the outer function returns, the inner function retains access to those variables."
+          }
+        ]
+      },
+      {
+        "session_id": "s006",
+        "date": "2025-01-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I center a div in CSS?"
+          },
+          {
+            "role": "assistant",
+            "content": "The modern way is `display: flex; justify-content: center; align-items: center;` on the parent container."
+          }
+        ]
+      },
+      {
+        "session_id": "s007",
+        "date": "2025-01-22",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between a stack and a queue?"
+          },
+          {
+            "role": "assistant",
+            "content": "A stack is LIFO (last in, first out) \u2014 think of a stack of plates. A queue is FIFO (first in, first out) \u2014 like a line at a store."
+          }
+        ]
+      },
+      {
+        "session_id": "s008",
+        "date": "2025-01-24",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What are some good VS Code extensions?"
+          },
+          {
+            "role": "assistant",
+            "content": "Popular ones include Prettier (formatting), ESLint (linting), GitLens (git history), and Thunder Client (API testing)."
+          }
+        ]
+      },
+      {
+        "session_id": "s009",
+        "date": "2025-01-26",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between a stack and a queue?"
+          },
+          {
+            "role": "assistant",
+            "content": "A stack is LIFO (last in, first out) \u2014 think of a stack of plates. A queue is FIFO (first in, first out) \u2014 like a line at a store."
+          }
+        ]
+      },
+      {
+        "session_id": "s010",
+        "date": "2025-01-28",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Explain Big O notation briefly"
+          },
+          {
+            "role": "assistant",
+            "content": "Big O describes how an algorithm's runtime grows with input size. O(1) is constant, O(n) is linear, O(n\u00b2) is quadratic. It measures the worst-case upper bound."
+          }
+        ]
+      },
+      {
+        "session_id": "s011",
+        "date": "2025-01-30",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the weather like today?"
+          },
+          {
+            "role": "assistant",
+            "content": "I don't have access to real-time weather data, but you can check weather.com or use a weather API."
+          }
+        ]
+      },
+      {
+        "session_id": "s012",
+        "date": "2025-02-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me write a regex to match email addresses?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Here's a common pattern: `^[\\w.-]+@[\\w.-]+\\.\\w+$`. Want me to explain each part?"
+          }
+        ]
+      },
+      {
+        "session_id": "s013",
+        "date": "2025-02-03",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me write a regex to match email addresses?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Here's a common pattern: `^[\\w.-]+@[\\w.-]+\\.\\w+$`. Want me to explain each part?"
+          }
+        ]
+      },
+      {
+        "session_id": "s014",
+        "date": "2025-02-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between a stack and a queue?"
+          },
+          {
+            "role": "assistant",
+            "content": "A stack is LIFO (last in, first out) \u2014 think of a stack of plates. A queue is FIFO (first in, first out) \u2014 like a line at a store."
+          }
+        ]
+      },
+      {
+        "session_id": "s015",
+        "date": "2025-02-07",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its surrounding scope. Even after the outer function returns, the inner function retains access to those variables."
+          }
+        ]
+      },
+      {
+        "session_id": "s016",
+        "date": "2025-02-09",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses PostgreSQL for the main application database"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted, uses postgresql for the main application database."
+          }
+        ]
+      },
+      {
+        "session_id": "s017",
+        "date": "2025-02-11",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its surrounding scope. Even after the outer function returns, the inner function retains access to those variables."
+          }
+        ]
+      },
+      {
+        "session_id": "s018",
+        "date": "2025-02-13",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What are some good VS Code extensions?"
+          },
+          {
+            "role": "assistant",
+            "content": "Popular ones include Prettier (formatting), ESLint (linting), GitLens (git history), and Thunder Client (API testing)."
+          }
+        ]
+      },
+      {
+        "session_id": "s019",
+        "date": "2025-02-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Explain Big O notation briefly"
+          },
+          {
+            "role": "assistant",
+            "content": "Big O describes how an algorithm's runtime grows with input size. O(1) is constant, O(n) is linear, O(n\u00b2) is quadratic. It measures the worst-case upper bound."
+          }
+        ]
+      },
+      {
+        "session_id": "s020",
+        "date": "2025-02-17",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me write a regex to match email addresses?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Here's a common pattern: `^[\\w.-]+@[\\w.-]+\\.\\w+$`. Want me to explain each part?"
+          }
+        ]
+      }
+    ],
+    "question": "What is Alex Chen's database preference?",
+    "expected_answer": "Uses PostgreSQL for the main application database",
+    "metadata": {
+      "total_sessions": 20,
+      "signal_sessions": [
+        "s016"
+      ],
+      "noise_sessions": 19,
+      "signal_to_noise_ratio": 0.05,
+      "sub_category": "chitchat-filtering"
+    }
+  },
+  {
+    "scenario_id": "temporal-p001-database",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses PostgreSQL for the main application database"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, uses postgresql for the main application database."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-02-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to SQLite for simplicity"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, switched to sqlite for simplicity."
+          }
+        ]
+      }
+    ],
+    "question": "What database was Alex Chen using around January 2025?",
+    "expected_answer": "Uses PostgreSQL for the main application database",
+    "metadata": {
+      "query_timestamp": "2025-01-28",
+      "belief_at_timestamp": "Uses PostgreSQL for the main application database",
+      "current_belief": "Switched to SQLite for simplicity",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "temporal-p001-database",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses PostgreSQL for the main application database"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, uses postgresql for the main application database."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-02-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to SQLite for simplicity"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, switched to sqlite for simplicity."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-04-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Migrated to DuckDB for analytics workloads"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, migrated to duckdb for analytics workloads."
+          }
+        ]
+      }
+    ],
+    "question": "What database was Alex Chen using around January 2025?",
+    "expected_answer": "Uses PostgreSQL for the main application database",
+    "metadata": {
+      "query_timestamp": "2025-01-28",
+      "belief_at_timestamp": "Uses PostgreSQL for the main application database",
+      "current_belief": "Migrated to DuckDB for analytics workloads",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "temporal-p001-language",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Building the backend in Python with Django"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, building the backend in python with django."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-03-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Rewrote the backend in Go"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, rewrote the backend in go."
+          }
+        ]
+      }
+    ],
+    "question": "What language was Alex Chen using around February 2025?",
+    "expected_answer": "Building the backend in Python with Django",
+    "metadata": {
+      "query_timestamp": "2025-02-08",
+      "belief_at_timestamp": "Building the backend in Python with Django",
+      "current_belief": "Rewrote the backend in Go",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "temporal-p001-editor",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses VS Code as primary editor"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, uses vs code as primary editor."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-02-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Neovim"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, switched to neovim."
+          }
+        ]
+      }
+    ],
+    "question": "What editor was Alex Chen using around January 2025?",
+    "expected_answer": "Uses VS Code as primary editor",
+    "metadata": {
+      "query_timestamp": "2025-01-30",
+      "belief_at_timestamp": "Uses VS Code as primary editor",
+      "current_belief": "Switched to Neovim",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "temporal-p001-editor",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses VS Code as primary editor"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, uses vs code as primary editor."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-02-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Neovim"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, switched to neovim."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-05-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Back to VS Code"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, back to vs code."
+          }
+        ]
+      }
+    ],
+    "question": "What editor was Alex Chen using around January 2025?",
+    "expected_answer": "Uses VS Code as primary editor",
+    "metadata": {
+      "query_timestamp": "2025-01-30",
+      "belief_at_timestamp": "Uses VS Code as primary editor",
+      "current_belief": "Back to VS Code",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "delta-p001",
+    "scenario_type": "delta-efficiency",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses PostgreSQL for the main application database"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-11",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Building the backend in Python with Django"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-01-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses pytest for all backend tests"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s004",
+        "date": "2025-01-13",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Django ORM for database migrations"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s005",
+        "date": "2025-01-14",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses VS Code as primary editor"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s006",
+        "date": "2025-01-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s007",
+        "date": "2025-01-16",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Alex Chen's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s008",
+        "date": "2025-01-17",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Alex Chen use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s009",
+        "date": "2025-01-18",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s010",
+        "date": "2025-01-19",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Alex Chen's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s011",
+        "date": "2025-01-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Alex Chen use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s012",
+        "date": "2025-01-21",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s013",
+        "date": "2025-01-22",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Alex Chen's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s014",
+        "date": "2025-01-23",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Alex Chen use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s015",
+        "date": "2025-01-24",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s016",
+        "date": "2025-01-25",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Alex Chen's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s017",
+        "date": "2025-01-26",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Alex Chen use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s018",
+        "date": "2025-01-27",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s019",
+        "date": "2025-01-28",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Alex Chen's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s020",
+        "date": "2025-01-29",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Alex Chen use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      }
+    ],
+    "question": "Measure context efficiency over 20 turns",
+    "expected_answer": "N/A \u2014 quantitative measurement",
+    "evaluation_turns": [
+      {
+        "question": "Can you remind me about Alex Chen's setup?",
+        "turn": 0
+      },
+      {
+        "question": "What tools does Alex Chen use?",
+        "turn": 1
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 2
+      },
+      {
+        "question": "Can you remind me about Alex Chen's setup?",
+        "turn": 3
+      },
+      {
+        "question": "What tools does Alex Chen use?",
+        "turn": 4
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 5
+      },
+      {
+        "question": "Can you remind me about Alex Chen's setup?",
+        "turn": 6
+      },
+      {
+        "question": "What tools does Alex Chen use?",
+        "turn": 7
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 8
+      },
+      {
+        "question": "Can you remind me about Alex Chen's setup?",
+        "turn": 9
+      },
+      {
+        "question": "What tools does Alex Chen use?",
+        "turn": 10
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 11
+      },
+      {
+        "question": "Can you remind me about Alex Chen's setup?",
+        "turn": 12
+      },
+      {
+        "question": "What tools does Alex Chen use?",
+        "turn": 13
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 14
+      },
+      {
+        "question": "Can you remind me about Alex Chen's setup?",
+        "turn": 15
+      },
+      {
+        "question": "What tools does Alex Chen use?",
+        "turn": 16
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 17
+      },
+      {
+        "question": "Can you remind me about Alex Chen's setup?",
+        "turn": 18
+      },
+      {
+        "question": "What tools does Alex Chen use?",
+        "turn": 19
+      }
+    ],
+    "metadata": {
+      "total_turns": 20,
+      "established_facts_by_turn_5": [
+        "Uses PostgreSQL for the main application database",
+        "Building the backend in Python with Django",
+        "Uses pytest for all backend tests",
+        "Uses Django ORM for database migrations",
+        "Uses VS Code as primary editor"
+      ]
+    }
+  },
+  {
+    "scenario_id": "uncertain-p001-testing",
+    "scenario_type": "uncertainty-abstention",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Building the backend in Python with Django"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses pytest for all backend tests"
+          },
+          {
+            "role": "assistant",
+            "content": "Makes sense."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-03-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Rewrote the backend in Go"
+          },
+          {
+            "role": "assistant",
+            "content": "Big change!"
+          }
+        ]
+      }
+    ],
+    "question": "Does Alex Chen still use tests for testing?",
+    "expected_answer": "Uncertain",
+    "metadata": {
+      "uncertainty_reason": "Root fact changed (Building the backend in Python with Django \u2192 Rewrote the backend in Go), dependent belief 'Uses pytest for all backend tests' was never explicitly updated",
+      "sub_category": "partially-invalidated"
+    }
+  },
+  {
+    "scenario_id": "uncertain-p001-orm",
+    "scenario_type": "uncertainty-abstention",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Building the backend in Python with Django"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Django ORM for database migrations"
+          },
+          {
+            "role": "assistant",
+            "content": "Makes sense."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-03-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Rewrote the backend in Go"
+          },
+          {
+            "role": "assistant",
+            "content": "Big change!"
+          }
+        ]
+      }
+    ],
+    "question": "Does Alex Chen still use migrations for orm?",
+    "expected_answer": "Uncertain",
+    "metadata": {
+      "uncertainty_reason": "Root fact changed (Building the backend in Python with Django \u2192 Rewrote the backend in Go), dependent belief 'Uses Django ORM for database migrations' was never explicitly updated",
+      "sub_category": "partially-invalidated"
+    }
+  },
+  {
+    "scenario_id": "belief-p002-framework",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses React with TypeScript for the frontend"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you uses react with typescript for the frontend."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-03-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Migrated to Next.js for SSR. SEO requirements."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you migrated to next.js for ssr."
+          }
+        ]
+      }
+    ],
+    "question": "What framework does Maria Santos currently use?",
+    "expected_answer": "Migrated to Next.js for SSR",
+    "metadata": {
+      "stale_answers": [
+        "Uses React with TypeScript for the frontend"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Uses React with TypeScript for the frontend",
+          "valid_from": "2025-01-05",
+          "valid_until": "2025-03-15",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Migrated to Next.js for SSR",
+          "valid_from": "2025-03-15",
+          "valid_until": null,
+          "source_session": "s002"
+        }
+      ],
+      "update_count": 1,
+      "difficulty": "easy"
+    }
+  },
+  {
+    "scenario_id": "belief-p002-framework",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses React with TypeScript for the frontend"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you uses react with typescript for the frontend."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-03-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Migrated to Next.js for SSR. SEO requirements."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you migrated to next.js for ssr."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-05-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Svelte. Next.js was too heavy."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you switched to svelte."
+          }
+        ]
+      }
+    ],
+    "question": "What framework does Maria Santos currently use?",
+    "expected_answer": "Switched to Svelte",
+    "metadata": {
+      "stale_answers": [
+        "Uses React with TypeScript for the frontend",
+        "Migrated to Next.js for SSR"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Uses React with TypeScript for the frontend",
+          "valid_from": "2025-01-05",
+          "valid_until": "2025-03-15",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Migrated to Next.js for SSR",
+          "valid_from": "2025-03-15",
+          "valid_until": "2025-05-20",
+          "source_session": "s002"
+        },
+        {
+          "fact": "Switched to Svelte",
+          "valid_from": "2025-05-20",
+          "valid_until": null,
+          "source_session": "s003"
+        }
+      ],
+      "update_count": 2,
+      "difficulty": "medium"
+    }
+  },
+  {
+    "scenario_id": "belief-p002-styling",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Tailwind CSS for styling"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you uses tailwind css for styling."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-04-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to vanilla CSS with CSS modules. Tailwind classes were cluttering the markup."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you switched to vanilla css with css modules."
+          }
+        ]
+      }
+    ],
+    "question": "What styling does Maria Santos currently use?",
+    "expected_answer": "Switched to vanilla CSS with CSS modules",
+    "metadata": {
+      "stale_answers": [
+        "Uses Tailwind CSS for styling"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Uses Tailwind CSS for styling",
+          "valid_from": "2025-01-05",
+          "valid_until": "2025-04-10",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Switched to vanilla CSS with CSS modules",
+          "valid_from": "2025-04-10",
+          "valid_until": null,
+          "source_session": "s002"
+        }
+      ],
+      "update_count": 1,
+      "difficulty": "easy"
+    }
+  },
+  {
+    "scenario_id": "belief-p002-deployment",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Deploys on Vercel"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you deploys on vercel."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-06-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Moved to Cloudflare Pages. Cost savings."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you moved to cloudflare pages."
+          }
+        ]
+      }
+    ],
+    "question": "What deployment does Maria Santos currently use?",
+    "expected_answer": "Moved to Cloudflare Pages",
+    "metadata": {
+      "stale_answers": [
+        "Deploys on Vercel"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Deploys on Vercel",
+          "valid_from": "2025-01-05",
+          "valid_until": "2025-06-01",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Moved to Cloudflare Pages",
+          "valid_from": "2025-06-01",
+          "valid_until": null,
+          "source_session": "s002"
+        }
+      ],
+      "update_count": 1,
+      "difficulty": "easy"
+    }
+  },
+  {
+    "scenario_id": "cascade-p002-state",
+    "scenario_type": "cascade-propagation",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses React with TypeScript for the frontend"
+          },
+          {
+            "role": "assistant",
+            "content": "Sounds good, uses react with typescript for the frontend."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Redux for state management"
+          },
+          {
+            "role": "assistant",
+            "content": "Makes sense given your setup."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-05-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Svelte. Next.js was too heavy"
+          },
+          {
+            "role": "assistant",
+            "content": "That's a big change! Switched to Svelte."
+          }
+        ]
+      }
+    ],
+    "question": "What state does Maria Santos use for their backend?",
+    "expected_answer": "Uncertain \u2014 Uses Redux for state management was specific to Uses React with TypeScript for the frontend, but they switched to svelte",
+    "metadata": {
+      "root_change": "Uses React with TypeScript for the frontend \u2192 Switched to Svelte",
+      "old_dependent": "Uses Redux for state management",
+      "dependency_chain": [
+        {
+          "fact": "Uses Redux for state management",
+          "depends_on": "Uses React with TypeScript for the frontend"
+        }
+      ],
+      "chain_depth": 1
+    }
+  },
+  {
+    "scenario_id": "cascade-p002-testing",
+    "scenario_type": "cascade-propagation",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses React with TypeScript for the frontend"
+          },
+          {
+            "role": "assistant",
+            "content": "Sounds good, uses react with typescript for the frontend."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Jest and React Testing Library"
+          },
+          {
+            "role": "assistant",
+            "content": "Makes sense given your setup."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-05-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Svelte. Next.js was too heavy"
+          },
+          {
+            "role": "assistant",
+            "content": "That's a big change! Switched to Svelte."
+          }
+        ]
+      }
+    ],
+    "question": "What testing does Maria Santos use for their backend?",
+    "expected_answer": "Uncertain \u2014 Uses Jest and React Testing Library was specific to Uses React with TypeScript for the frontend, but they switched to svelte",
+    "metadata": {
+      "root_change": "Uses React with TypeScript for the frontend \u2192 Switched to Svelte",
+      "old_dependent": "Uses Jest and React Testing Library",
+      "dependency_chain": [
+        {
+          "fact": "Uses Jest and React Testing Library",
+          "depends_on": "Uses React with TypeScript for the frontend"
+        }
+      ],
+      "chain_depth": 1
+    }
+  },
+  {
+    "scenario_id": "noise-p002-framework",
+    "scenario_type": "noise-resistance",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its surrounding scope. Even after the outer function returns, the inner function retains access to those variables."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-07",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What are some good VS Code extensions?"
+          },
+          {
+            "role": "assistant",
+            "content": "Popular ones include Prettier (formatting), ESLint (linting), GitLens (git history), and Thunder Client (API testing)."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-01-09",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the weather like today?"
+          },
+          {
+            "role": "assistant",
+            "content": "I don't have access to real-time weather data, but you can check weather.com or use a weather API."
+          }
+        ]
+      },
+      {
+        "session_id": "s004",
+        "date": "2025-01-11",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its surrounding scope. Even after the outer function returns, the inner function retains access to those variables."
+          }
+        ]
+      },
+      {
+        "session_id": "s005",
+        "date": "2025-01-13",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me debug this error: KeyError 'user_id'?"
+          },
+          {
+            "role": "assistant",
+            "content": "A KeyError means the key doesn't exist in the dictionary. Check if 'user_id' is present before accessing it, or use `.get('user_id', default)`."
+          }
+        ]
+      },
+      {
+        "session_id": "s006",
+        "date": "2025-01-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Explain Big O notation briefly"
+          },
+          {
+            "role": "assistant",
+            "content": "Big O describes how an algorithm's runtime grows with input size. O(1) is constant, O(n) is linear, O(n\u00b2) is quadratic. It measures the worst-case upper bound."
+          }
+        ]
+      },
+      {
+        "session_id": "s007",
+        "date": "2025-01-17",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's a good commit message format?"
+          },
+          {
+            "role": "assistant",
+            "content": "A common convention is: `type(scope): description`. For example: `fix(auth): handle expired tokens`. Keep the subject line under 72 characters."
+          }
+        ]
+      },
+      {
+        "session_id": "s008",
+        "date": "2025-01-19",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me write a regex to match email addresses?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Here's a common pattern: `^[\\w.-]+@[\\w.-]+\\.\\w+$`. Want me to explain each part?"
+          }
+        ]
+      },
+      {
+        "session_id": "s009",
+        "date": "2025-01-21",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I center a div in CSS?"
+          },
+          {
+            "role": "assistant",
+            "content": "The modern way is `display: flex; justify-content: center; align-items: center;` on the parent container."
+          }
+        ]
+      },
+      {
+        "session_id": "s010",
+        "date": "2025-01-23",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the weather like today?"
+          },
+          {
+            "role": "assistant",
+            "content": "I don't have access to real-time weather data, but you can check weather.com or use a weather API."
+          }
+        ]
+      },
+      {
+        "session_id": "s011",
+        "date": "2025-01-25",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I read a file in Python?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `with open('file.txt', 'r') as f: content = f.read()`. The `with` statement ensures the file is properly closed."
+          }
+        ]
+      },
+      {
+        "session_id": "s012",
+        "date": "2025-01-27",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's a good commit message format?"
+          },
+          {
+            "role": "assistant",
+            "content": "A common convention is: `type(scope): description`. For example: `fix(auth): handle expired tokens`. Keep the subject line under 72 characters."
+          }
+        ]
+      },
+      {
+        "session_id": "s013",
+        "date": "2025-01-29",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I center a div in CSS?"
+          },
+          {
+            "role": "assistant",
+            "content": "The modern way is `display: flex; justify-content: center; align-items: center;` on the parent container."
+          }
+        ]
+      },
+      {
+        "session_id": "s014",
+        "date": "2025-01-31",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses React with TypeScript for the frontend"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted, uses react with typescript for the frontend."
+          }
+        ]
+      },
+      {
+        "session_id": "s015",
+        "date": "2025-02-02",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its surrounding scope. Even after the outer function returns, the inner function retains access to those variables."
+          }
+        ]
+      },
+      {
+        "session_id": "s016",
+        "date": "2025-02-04",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I read a file in Python?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `with open('file.txt', 'r') as f: content = f.read()`. The `with` statement ensures the file is properly closed."
+          }
+        ]
+      },
+      {
+        "session_id": "s017",
+        "date": "2025-02-06",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between a stack and a queue?"
+          },
+          {
+            "role": "assistant",
+            "content": "A stack is LIFO (last in, first out) \u2014 think of a stack of plates. A queue is FIFO (first in, first out) \u2014 like a line at a store."
+          }
+        ]
+      },
+      {
+        "session_id": "s018",
+        "date": "2025-02-08",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between a stack and a queue?"
+          },
+          {
+            "role": "assistant",
+            "content": "A stack is LIFO (last in, first out) \u2014 think of a stack of plates. A queue is FIFO (first in, first out) \u2014 like a line at a store."
+          }
+        ]
+      },
+      {
+        "session_id": "s019",
+        "date": "2025-02-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the weather like today?"
+          },
+          {
+            "role": "assistant",
+            "content": "I don't have access to real-time weather data, but you can check weather.com or use a weather API."
+          }
+        ]
+      },
+      {
+        "session_id": "s020",
+        "date": "2025-02-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between a stack and a queue?"
+          },
+          {
+            "role": "assistant",
+            "content": "A stack is LIFO (last in, first out) \u2014 think of a stack of plates. A queue is FIFO (first in, first out) \u2014 like a line at a store."
+          }
+        ]
+      }
+    ],
+    "question": "What is Maria Santos's framework preference?",
+    "expected_answer": "Uses React with TypeScript for the frontend",
+    "metadata": {
+      "total_sessions": 20,
+      "signal_sessions": [
+        "s014"
+      ],
+      "noise_sessions": 19,
+      "signal_to_noise_ratio": 0.05,
+      "sub_category": "chitchat-filtering"
+    }
+  },
+  {
+    "scenario_id": "temporal-p002-framework",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses React with TypeScript for the frontend"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, uses react with typescript for the frontend."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-03-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Migrated to Next.js for SSR"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, migrated to next.js for ssr."
+          }
+        ]
+      }
+    ],
+    "question": "What framework was Maria Santos using around February 2025?",
+    "expected_answer": "Uses React with TypeScript for the frontend",
+    "metadata": {
+      "query_timestamp": "2025-02-08",
+      "belief_at_timestamp": "Uses React with TypeScript for the frontend",
+      "current_belief": "Migrated to Next.js for SSR",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "temporal-p002-framework",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses React with TypeScript for the frontend"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, uses react with typescript for the frontend."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-03-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Migrated to Next.js for SSR"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, migrated to next.js for ssr."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-05-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Svelte"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, switched to svelte."
+          }
+        ]
+      }
+    ],
+    "question": "What framework was Maria Santos using around February 2025?",
+    "expected_answer": "Uses React with TypeScript for the frontend",
+    "metadata": {
+      "query_timestamp": "2025-02-08",
+      "belief_at_timestamp": "Uses React with TypeScript for the frontend",
+      "current_belief": "Switched to Svelte",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "temporal-p002-styling",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Tailwind CSS for styling"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, uses tailwind css for styling."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-04-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to vanilla CSS with CSS modules"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, switched to vanilla css with css modules."
+          }
+        ]
+      }
+    ],
+    "question": "What styling was Maria Santos using around February 2025?",
+    "expected_answer": "Uses Tailwind CSS for styling",
+    "metadata": {
+      "query_timestamp": "2025-02-21",
+      "belief_at_timestamp": "Uses Tailwind CSS for styling",
+      "current_belief": "Switched to vanilla CSS with CSS modules",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "temporal-p002-deployment",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Deploys on Vercel"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, deploys on vercel."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-06-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Moved to Cloudflare Pages"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, moved to cloudflare pages."
+          }
+        ]
+      }
+    ],
+    "question": "What deployment was Maria Santos using around March 2025?",
+    "expected_answer": "Deploys on Vercel",
+    "metadata": {
+      "query_timestamp": "2025-03-19",
+      "belief_at_timestamp": "Deploys on Vercel",
+      "current_belief": "Moved to Cloudflare Pages",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "delta-p002",
+    "scenario_type": "delta-efficiency",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses React with TypeScript for the frontend"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-06",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Tailwind CSS for styling"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-01-07",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Redux for state management"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s004",
+        "date": "2025-01-08",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Jest and React Testing Library"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s005",
+        "date": "2025-01-09",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses WebStorm as primary IDE"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s006",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s007",
+        "date": "2025-01-11",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Maria Santos's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s008",
+        "date": "2025-01-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Maria Santos use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s009",
+        "date": "2025-01-13",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s010",
+        "date": "2025-01-14",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Maria Santos's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s011",
+        "date": "2025-01-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Maria Santos use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s012",
+        "date": "2025-01-16",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s013",
+        "date": "2025-01-17",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Maria Santos's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s014",
+        "date": "2025-01-18",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Maria Santos use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s015",
+        "date": "2025-01-19",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s016",
+        "date": "2025-01-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Maria Santos's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s017",
+        "date": "2025-01-21",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Maria Santos use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s018",
+        "date": "2025-01-22",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s019",
+        "date": "2025-01-23",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Maria Santos's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s020",
+        "date": "2025-01-24",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Maria Santos use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      }
+    ],
+    "question": "Measure context efficiency over 20 turns",
+    "expected_answer": "N/A \u2014 quantitative measurement",
+    "evaluation_turns": [
+      {
+        "question": "Can you remind me about Maria Santos's setup?",
+        "turn": 0
+      },
+      {
+        "question": "What tools does Maria Santos use?",
+        "turn": 1
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 2
+      },
+      {
+        "question": "Can you remind me about Maria Santos's setup?",
+        "turn": 3
+      },
+      {
+        "question": "What tools does Maria Santos use?",
+        "turn": 4
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 5
+      },
+      {
+        "question": "Can you remind me about Maria Santos's setup?",
+        "turn": 6
+      },
+      {
+        "question": "What tools does Maria Santos use?",
+        "turn": 7
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 8
+      },
+      {
+        "question": "Can you remind me about Maria Santos's setup?",
+        "turn": 9
+      },
+      {
+        "question": "What tools does Maria Santos use?",
+        "turn": 10
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 11
+      },
+      {
+        "question": "Can you remind me about Maria Santos's setup?",
+        "turn": 12
+      },
+      {
+        "question": "What tools does Maria Santos use?",
+        "turn": 13
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 14
+      },
+      {
+        "question": "Can you remind me about Maria Santos's setup?",
+        "turn": 15
+      },
+      {
+        "question": "What tools does Maria Santos use?",
+        "turn": 16
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 17
+      },
+      {
+        "question": "Can you remind me about Maria Santos's setup?",
+        "turn": 18
+      },
+      {
+        "question": "What tools does Maria Santos use?",
+        "turn": 19
+      }
+    ],
+    "metadata": {
+      "total_turns": 20,
+      "established_facts_by_turn_5": [
+        "Uses React with TypeScript for the frontend",
+        "Uses Tailwind CSS for styling",
+        "Uses Redux for state management",
+        "Uses Jest and React Testing Library",
+        "Uses WebStorm as primary IDE"
+      ]
+    }
+  },
+  {
+    "scenario_id": "uncertain-p002-state",
+    "scenario_type": "uncertainty-abstention",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses React with TypeScript for the frontend"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Redux for state management"
+          },
+          {
+            "role": "assistant",
+            "content": "Makes sense."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-05-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Svelte"
+          },
+          {
+            "role": "assistant",
+            "content": "Big change!"
+          }
+        ]
+      }
+    ],
+    "question": "Does Maria Santos still use management for state?",
+    "expected_answer": "Uncertain",
+    "metadata": {
+      "uncertainty_reason": "Root fact changed (Uses React with TypeScript for the frontend \u2192 Switched to Svelte), dependent belief 'Uses Redux for state management' was never explicitly updated",
+      "sub_category": "partially-invalidated"
+    }
+  },
+  {
+    "scenario_id": "uncertain-p002-testing",
+    "scenario_type": "uncertainty-abstention",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses React with TypeScript for the frontend"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Jest and React Testing Library"
+          },
+          {
+            "role": "assistant",
+            "content": "Makes sense."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-05-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Svelte"
+          },
+          {
+            "role": "assistant",
+            "content": "Big change!"
+          }
+        ]
+      }
+    ],
+    "question": "Does Maria Santos still use Library for testing?",
+    "expected_answer": "Uncertain",
+    "metadata": {
+      "uncertainty_reason": "Root fact changed (Uses React with TypeScript for the frontend \u2192 Switched to Svelte), dependent belief 'Uses Jest and React Testing Library' was never explicitly updated",
+      "sub_category": "partially-invalidated"
+    }
+  },
+  {
+    "scenario_id": "belief-p003-orchestration",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-08",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Kubernetes on AWS EKS for container orchestration"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you uses kubernetes on aws eks for container orchestration."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-04-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Simplified to Docker Compose on a single server. K8s was overkill for their scale."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you simplified to docker compose on a single server."
+          }
+        ]
+      }
+    ],
+    "question": "What orchestration does James Kim currently use?",
+    "expected_answer": "Simplified to Docker Compose on a single server",
+    "metadata": {
+      "stale_answers": [
+        "Uses Kubernetes on AWS EKS for container orchestration"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Uses Kubernetes on AWS EKS for container orchestration",
+          "valid_from": "2025-01-08",
+          "valid_until": "2025-04-20",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Simplified to Docker Compose on a single server",
+          "valid_from": "2025-04-20",
+          "valid_until": null,
+          "source_session": "s002"
+        }
+      ],
+      "update_count": 1,
+      "difficulty": "easy"
+    }
+  },
+  {
+    "scenario_id": "belief-p003-ci",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-08",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses GitHub Actions for CI/CD"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you uses github actions for ci/cd."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-03-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to GitLab CI. Company moved to GitLab."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you switched to gitlab ci."
+          }
+        ]
+      }
+    ],
+    "question": "What ci does James Kim currently use?",
+    "expected_answer": "Switched to GitLab CI",
+    "metadata": {
+      "stale_answers": [
+        "Uses GitHub Actions for CI/CD"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Uses GitHub Actions for CI/CD",
+          "valid_from": "2025-01-08",
+          "valid_until": "2025-03-01",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Switched to GitLab CI",
+          "valid_from": "2025-03-01",
+          "valid_until": null,
+          "source_session": "s002"
+        }
+      ],
+      "update_count": 1,
+      "difficulty": "easy"
+    }
+  },
+  {
+    "scenario_id": "belief-p003-iac",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-08",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Terraform for infrastructure as code"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you uses terraform for infrastructure as code."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-05-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Pulumi. Wanted to use real programming languages instead of HCL."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you switched to pulumi."
+          }
+        ]
+      }
+    ],
+    "question": "What iac does James Kim currently use?",
+    "expected_answer": "Switched to Pulumi",
+    "metadata": {
+      "stale_answers": [
+        "Uses Terraform for infrastructure as code"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Uses Terraform for infrastructure as code",
+          "valid_from": "2025-01-08",
+          "valid_until": "2025-05-15",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Switched to Pulumi",
+          "valid_from": "2025-05-15",
+          "valid_until": null,
+          "source_session": "s002"
+        }
+      ],
+      "update_count": 1,
+      "difficulty": "easy"
+    }
+  },
+  {
+    "scenario_id": "noise-p003-orchestration",
+    "scenario_type": "noise-resistance",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-08",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I read a file in Python?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `with open('file.txt', 'r') as f: content = f.read()`. The `with` statement ensures the file is properly closed."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Explain Big O notation briefly"
+          },
+          {
+            "role": "assistant",
+            "content": "Big O describes how an algorithm's runtime grows with input size. O(1) is constant, O(n) is linear, O(n\u00b2) is quadratic. It measures the worst-case upper bound."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-01-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's a good commit message format?"
+          },
+          {
+            "role": "assistant",
+            "content": "A common convention is: `type(scope): description`. For example: `fix(auth): handle expired tokens`. Keep the subject line under 72 characters."
+          }
+        ]
+      },
+      {
+        "session_id": "s004",
+        "date": "2025-01-14",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me write a regex to match email addresses?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Here's a common pattern: `^[\\w.-]+@[\\w.-]+\\.\\w+$`. Want me to explain each part?"
+          }
+        ]
+      },
+      {
+        "session_id": "s005",
+        "date": "2025-01-16",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me debug this error: KeyError 'user_id'?"
+          },
+          {
+            "role": "assistant",
+            "content": "A KeyError means the key doesn't exist in the dictionary. Check if 'user_id' is present before accessing it, or use `.get('user_id', default)`."
+          }
+        ]
+      },
+      {
+        "session_id": "s006",
+        "date": "2025-01-18",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What are some good VS Code extensions?"
+          },
+          {
+            "role": "assistant",
+            "content": "Popular ones include Prettier (formatting), ESLint (linting), GitLens (git history), and Thunder Client (API testing)."
+          }
+        ]
+      },
+      {
+        "session_id": "s007",
+        "date": "2025-01-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between a stack and a queue?"
+          },
+          {
+            "role": "assistant",
+            "content": "A stack is LIFO (last in, first out) \u2014 think of a stack of plates. A queue is FIFO (first in, first out) \u2014 like a line at a store."
+          }
+        ]
+      },
+      {
+        "session_id": "s008",
+        "date": "2025-01-22",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the weather like today?"
+          },
+          {
+            "role": "assistant",
+            "content": "I don't have access to real-time weather data, but you can check weather.com or use a weather API."
+          }
+        ]
+      },
+      {
+        "session_id": "s009",
+        "date": "2025-01-24",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between a stack and a queue?"
+          },
+          {
+            "role": "assistant",
+            "content": "A stack is LIFO (last in, first out) \u2014 think of a stack of plates. A queue is FIFO (first in, first out) \u2014 like a line at a store."
+          }
+        ]
+      },
+      {
+        "session_id": "s010",
+        "date": "2025-01-26",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What are some good VS Code extensions?"
+          },
+          {
+            "role": "assistant",
+            "content": "Popular ones include Prettier (formatting), ESLint (linting), GitLens (git history), and Thunder Client (API testing)."
+          }
+        ]
+      },
+      {
+        "session_id": "s011",
+        "date": "2025-01-28",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Kubernetes on AWS EKS for container orchestration"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted, uses kubernetes on aws eks for container orchestration."
+          }
+        ]
+      },
+      {
+        "session_id": "s012",
+        "date": "2025-01-30",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's a good commit message format?"
+          },
+          {
+            "role": "assistant",
+            "content": "A common convention is: `type(scope): description`. For example: `fix(auth): handle expired tokens`. Keep the subject line under 72 characters."
+          }
+        ]
+      },
+      {
+        "session_id": "s013",
+        "date": "2025-02-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Explain Big O notation briefly"
+          },
+          {
+            "role": "assistant",
+            "content": "Big O describes how an algorithm's runtime grows with input size. O(1) is constant, O(n) is linear, O(n\u00b2) is quadratic. It measures the worst-case upper bound."
+          }
+        ]
+      },
+      {
+        "session_id": "s014",
+        "date": "2025-02-03",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I read a file in Python?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `with open('file.txt', 'r') as f: content = f.read()`. The `with` statement ensures the file is properly closed."
+          }
+        ]
+      },
+      {
+        "session_id": "s015",
+        "date": "2025-02-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Explain Big O notation briefly"
+          },
+          {
+            "role": "assistant",
+            "content": "Big O describes how an algorithm's runtime grows with input size. O(1) is constant, O(n) is linear, O(n\u00b2) is quadratic. It measures the worst-case upper bound."
+          }
+        ]
+      },
+      {
+        "session_id": "s016",
+        "date": "2025-02-07",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its surrounding scope. Even after the outer function returns, the inner function retains access to those variables."
+          }
+        ]
+      },
+      {
+        "session_id": "s017",
+        "date": "2025-02-09",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between a stack and a queue?"
+          },
+          {
+            "role": "assistant",
+            "content": "A stack is LIFO (last in, first out) \u2014 think of a stack of plates. A queue is FIFO (first in, first out) \u2014 like a line at a store."
+          }
+        ]
+      },
+      {
+        "session_id": "s018",
+        "date": "2025-02-11",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me write a regex to match email addresses?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Here's a common pattern: `^[\\w.-]+@[\\w.-]+\\.\\w+$`. Want me to explain each part?"
+          }
+        ]
+      },
+      {
+        "session_id": "s019",
+        "date": "2025-02-13",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its surrounding scope. Even after the outer function returns, the inner function retains access to those variables."
+          }
+        ]
+      },
+      {
+        "session_id": "s020",
+        "date": "2025-02-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's a good commit message format?"
+          },
+          {
+            "role": "assistant",
+            "content": "A common convention is: `type(scope): description`. For example: `fix(auth): handle expired tokens`. Keep the subject line under 72 characters."
+          }
+        ]
+      }
+    ],
+    "question": "What is James Kim's orchestration preference?",
+    "expected_answer": "Uses Kubernetes on AWS EKS for container orchestration",
+    "metadata": {
+      "total_sessions": 20,
+      "signal_sessions": [
+        "s011"
+      ],
+      "noise_sessions": 19,
+      "signal_to_noise_ratio": 0.05,
+      "sub_category": "chitchat-filtering"
+    }
+  },
+  {
+    "scenario_id": "temporal-p003-orchestration",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-08",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Kubernetes on AWS EKS for container orchestration"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, uses kubernetes on aws eks for container orchestration."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-04-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Simplified to Docker Compose on a single server"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, simplified to docker compose on a single server."
+          }
+        ]
+      }
+    ],
+    "question": "What orchestration was James Kim using around February 2025?",
+    "expected_answer": "Uses Kubernetes on AWS EKS for container orchestration",
+    "metadata": {
+      "query_timestamp": "2025-02-28",
+      "belief_at_timestamp": "Uses Kubernetes on AWS EKS for container orchestration",
+      "current_belief": "Simplified to Docker Compose on a single server",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "temporal-p003-ci",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-08",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses GitHub Actions for CI/CD"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, uses github actions for ci/cd."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-03-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to GitLab CI"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, switched to gitlab ci."
+          }
+        ]
+      }
+    ],
+    "question": "What ci was James Kim using around February 2025?",
+    "expected_answer": "Uses GitHub Actions for CI/CD",
+    "metadata": {
+      "query_timestamp": "2025-02-03",
+      "belief_at_timestamp": "Uses GitHub Actions for CI/CD",
+      "current_belief": "Switched to GitLab CI",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "temporal-p003-iac",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-08",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Terraform for infrastructure as code"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, uses terraform for infrastructure as code."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-05-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Pulumi"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, switched to pulumi."
+          }
+        ]
+      }
+    ],
+    "question": "What iac was James Kim using around March 2025?",
+    "expected_answer": "Uses Terraform for infrastructure as code",
+    "metadata": {
+      "query_timestamp": "2025-03-12",
+      "belief_at_timestamp": "Uses Terraform for infrastructure as code",
+      "current_belief": "Switched to Pulumi",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "delta-p003",
+    "scenario_type": "delta-efficiency",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-08",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Kubernetes on AWS EKS for container orchestration"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-09",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses GitHub Actions for CI/CD"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-01-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Datadog for monitoring and alerting"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s004",
+        "date": "2025-01-11",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Terraform for infrastructure as code"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s005",
+        "date": "2025-01-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Primary cloud provider is AWS"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s006",
+        "date": "2025-01-13",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s007",
+        "date": "2025-01-14",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about James Kim's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s008",
+        "date": "2025-01-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does James Kim use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s009",
+        "date": "2025-01-16",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s010",
+        "date": "2025-01-17",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about James Kim's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s011",
+        "date": "2025-01-18",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does James Kim use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s012",
+        "date": "2025-01-19",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s013",
+        "date": "2025-01-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about James Kim's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s014",
+        "date": "2025-01-21",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does James Kim use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s015",
+        "date": "2025-01-22",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s016",
+        "date": "2025-01-23",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about James Kim's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s017",
+        "date": "2025-01-24",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does James Kim use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s018",
+        "date": "2025-01-25",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s019",
+        "date": "2025-01-26",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about James Kim's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s020",
+        "date": "2025-01-27",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does James Kim use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      }
+    ],
+    "question": "Measure context efficiency over 20 turns",
+    "expected_answer": "N/A \u2014 quantitative measurement",
+    "evaluation_turns": [
+      {
+        "question": "Can you remind me about James Kim's setup?",
+        "turn": 0
+      },
+      {
+        "question": "What tools does James Kim use?",
+        "turn": 1
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 2
+      },
+      {
+        "question": "Can you remind me about James Kim's setup?",
+        "turn": 3
+      },
+      {
+        "question": "What tools does James Kim use?",
+        "turn": 4
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 5
+      },
+      {
+        "question": "Can you remind me about James Kim's setup?",
+        "turn": 6
+      },
+      {
+        "question": "What tools does James Kim use?",
+        "turn": 7
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 8
+      },
+      {
+        "question": "Can you remind me about James Kim's setup?",
+        "turn": 9
+      },
+      {
+        "question": "What tools does James Kim use?",
+        "turn": 10
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 11
+      },
+      {
+        "question": "Can you remind me about James Kim's setup?",
+        "turn": 12
+      },
+      {
+        "question": "What tools does James Kim use?",
+        "turn": 13
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 14
+      },
+      {
+        "question": "Can you remind me about James Kim's setup?",
+        "turn": 15
+      },
+      {
+        "question": "What tools does James Kim use?",
+        "turn": 16
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 17
+      },
+      {
+        "question": "Can you remind me about James Kim's setup?",
+        "turn": 18
+      },
+      {
+        "question": "What tools does James Kim use?",
+        "turn": 19
+      }
+    ],
+    "metadata": {
+      "total_turns": 20,
+      "established_facts_by_turn_5": [
+        "Uses Kubernetes on AWS EKS for container orchestration",
+        "Uses GitHub Actions for CI/CD",
+        "Uses Datadog for monitoring and alerting",
+        "Uses Terraform for infrastructure as code",
+        "Primary cloud provider is AWS"
+      ]
+    }
+  },
+  {
+    "scenario_id": "belief-p004-ml_framework",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses PyTorch for model training"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you uses pytorch for model training."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-03-25",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to JAX for better performance"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you switched to jax for better performance."
+          }
+        ]
+      }
+    ],
+    "question": "What ml framework does Priya Patel currently use?",
+    "expected_answer": "Switched to JAX for better performance",
+    "metadata": {
+      "stale_answers": [
+        "Uses PyTorch for model training"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Uses PyTorch for model training",
+          "valid_from": "2025-01-12",
+          "valid_until": "2025-03-25",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Switched to JAX for better performance",
+          "valid_from": "2025-03-25",
+          "valid_until": null,
+          "source_session": "s002"
+        }
+      ],
+      "update_count": 1,
+      "difficulty": "easy"
+    }
+  },
+  {
+    "scenario_id": "belief-p004-notebook",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Jupyter notebooks for exploration"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you uses jupyter notebooks for exploration."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-04-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Marimo for reactive notebooks"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you switched to marimo for reactive notebooks."
+          }
+        ]
+      }
+    ],
+    "question": "What notebook does Priya Patel currently use?",
+    "expected_answer": "Switched to Marimo for reactive notebooks",
+    "metadata": {
+      "stale_answers": [
+        "Uses Jupyter notebooks for exploration"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Uses Jupyter notebooks for exploration",
+          "valid_from": "2025-01-12",
+          "valid_until": "2025-04-15",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Switched to Marimo for reactive notebooks",
+          "valid_from": "2025-04-15",
+          "valid_until": null,
+          "source_session": "s002"
+        }
+      ],
+      "update_count": 1,
+      "difficulty": "easy"
+    }
+  },
+  {
+    "scenario_id": "belief-p004-data",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses pandas for data manipulation"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you uses pandas for data manipulation."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-05-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Polars for speed"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you switched to polars for speed."
+          }
+        ]
+      }
+    ],
+    "question": "What data does Priya Patel currently use?",
+    "expected_answer": "Switched to Polars for speed",
+    "metadata": {
+      "stale_answers": [
+        "Uses pandas for data manipulation"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Uses pandas for data manipulation",
+          "valid_from": "2025-01-12",
+          "valid_until": "2025-05-01",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Switched to Polars for speed",
+          "valid_from": "2025-05-01",
+          "valid_until": null,
+          "source_session": "s002"
+        }
+      ],
+      "update_count": 1,
+      "difficulty": "easy"
+    }
+  },
+  {
+    "scenario_id": "noise-p004-ml_framework",
+    "scenario_type": "noise-resistance",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its surrounding scope. Even after the outer function returns, the inner function retains access to those variables."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-14",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between a stack and a queue?"
+          },
+          {
+            "role": "assistant",
+            "content": "A stack is LIFO (last in, first out) \u2014 think of a stack of plates. A queue is FIFO (first in, first out) \u2014 like a line at a store."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-01-16",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the weather like today?"
+          },
+          {
+            "role": "assistant",
+            "content": "I don't have access to real-time weather data, but you can check weather.com or use a weather API."
+          }
+        ]
+      },
+      {
+        "session_id": "s004",
+        "date": "2025-01-18",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's a good commit message format?"
+          },
+          {
+            "role": "assistant",
+            "content": "A common convention is: `type(scope): description`. For example: `fix(auth): handle expired tokens`. Keep the subject line under 72 characters."
+          }
+        ]
+      },
+      {
+        "session_id": "s005",
+        "date": "2025-01-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me debug this error: KeyError 'user_id'?"
+          },
+          {
+            "role": "assistant",
+            "content": "A KeyError means the key doesn't exist in the dictionary. Check if 'user_id' is present before accessing it, or use `.get('user_id', default)`."
+          }
+        ]
+      },
+      {
+        "session_id": "s006",
+        "date": "2025-01-22",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I read a file in Python?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `with open('file.txt', 'r') as f: content = f.read()`. The `with` statement ensures the file is properly closed."
+          }
+        ]
+      },
+      {
+        "session_id": "s007",
+        "date": "2025-01-24",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses PyTorch for model training"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted, uses pytorch for model training."
+          }
+        ]
+      },
+      {
+        "session_id": "s008",
+        "date": "2025-01-26",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I center a div in CSS?"
+          },
+          {
+            "role": "assistant",
+            "content": "The modern way is `display: flex; justify-content: center; align-items: center;` on the parent container."
+          }
+        ]
+      },
+      {
+        "session_id": "s009",
+        "date": "2025-01-28",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I read a file in Python?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `with open('file.txt', 'r') as f: content = f.read()`. The `with` statement ensures the file is properly closed."
+          }
+        ]
+      },
+      {
+        "session_id": "s010",
+        "date": "2025-01-30",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I read a file in Python?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `with open('file.txt', 'r') as f: content = f.read()`. The `with` statement ensures the file is properly closed."
+          }
+        ]
+      },
+      {
+        "session_id": "s011",
+        "date": "2025-02-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its surrounding scope. Even after the outer function returns, the inner function retains access to those variables."
+          }
+        ]
+      },
+      {
+        "session_id": "s012",
+        "date": "2025-02-03",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's a good commit message format?"
+          },
+          {
+            "role": "assistant",
+            "content": "A common convention is: `type(scope): description`. For example: `fix(auth): handle expired tokens`. Keep the subject line under 72 characters."
+          }
+        ]
+      },
+      {
+        "session_id": "s013",
+        "date": "2025-02-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between a stack and a queue?"
+          },
+          {
+            "role": "assistant",
+            "content": "A stack is LIFO (last in, first out) \u2014 think of a stack of plates. A queue is FIFO (first in, first out) \u2014 like a line at a store."
+          }
+        ]
+      },
+      {
+        "session_id": "s014",
+        "date": "2025-02-07",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Explain Big O notation briefly"
+          },
+          {
+            "role": "assistant",
+            "content": "Big O describes how an algorithm's runtime grows with input size. O(1) is constant, O(n) is linear, O(n\u00b2) is quadratic. It measures the worst-case upper bound."
+          }
+        ]
+      },
+      {
+        "session_id": "s015",
+        "date": "2025-02-09",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I center a div in CSS?"
+          },
+          {
+            "role": "assistant",
+            "content": "The modern way is `display: flex; justify-content: center; align-items: center;` on the parent container."
+          }
+        ]
+      },
+      {
+        "session_id": "s016",
+        "date": "2025-02-11",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What are some good VS Code extensions?"
+          },
+          {
+            "role": "assistant",
+            "content": "Popular ones include Prettier (formatting), ESLint (linting), GitLens (git history), and Thunder Client (API testing)."
+          }
+        ]
+      },
+      {
+        "session_id": "s017",
+        "date": "2025-02-13",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its surrounding scope. Even after the outer function returns, the inner function retains access to those variables."
+          }
+        ]
+      },
+      {
+        "session_id": "s018",
+        "date": "2025-02-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I center a div in CSS?"
+          },
+          {
+            "role": "assistant",
+            "content": "The modern way is `display: flex; justify-content: center; align-items: center;` on the parent container."
+          }
+        ]
+      },
+      {
+        "session_id": "s019",
+        "date": "2025-02-17",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me debug this error: KeyError 'user_id'?"
+          },
+          {
+            "role": "assistant",
+            "content": "A KeyError means the key doesn't exist in the dictionary. Check if 'user_id' is present before accessing it, or use `.get('user_id', default)`."
+          }
+        ]
+      },
+      {
+        "session_id": "s020",
+        "date": "2025-02-19",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the weather like today?"
+          },
+          {
+            "role": "assistant",
+            "content": "I don't have access to real-time weather data, but you can check weather.com or use a weather API."
+          }
+        ]
+      }
+    ],
+    "question": "What is Priya Patel's ml framework preference?",
+    "expected_answer": "Uses PyTorch for model training",
+    "metadata": {
+      "total_sessions": 20,
+      "signal_sessions": [
+        "s007"
+      ],
+      "noise_sessions": 19,
+      "signal_to_noise_ratio": 0.05,
+      "sub_category": "chitchat-filtering"
+    }
+  },
+  {
+    "scenario_id": "temporal-p004-ml_framework",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses PyTorch for model training"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, uses pytorch for model training."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-03-25",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to JAX for better performance"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, switched to jax for better performance."
+          }
+        ]
+      }
+    ],
+    "question": "What ml framework was Priya Patel using around February 2025?",
+    "expected_answer": "Uses PyTorch for model training",
+    "metadata": {
+      "query_timestamp": "2025-02-17",
+      "belief_at_timestamp": "Uses PyTorch for model training",
+      "current_belief": "Switched to JAX for better performance",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "temporal-p004-notebook",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Jupyter notebooks for exploration"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, uses jupyter notebooks for exploration."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-04-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Marimo for reactive notebooks"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, switched to marimo for reactive notebooks."
+          }
+        ]
+      }
+    ],
+    "question": "What notebook was Priya Patel using around February 2025?",
+    "expected_answer": "Uses Jupyter notebooks for exploration",
+    "metadata": {
+      "query_timestamp": "2025-02-27",
+      "belief_at_timestamp": "Uses Jupyter notebooks for exploration",
+      "current_belief": "Switched to Marimo for reactive notebooks",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "temporal-p004-data",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses pandas for data manipulation"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, uses pandas for data manipulation."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-05-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Polars for speed"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, switched to polars for speed."
+          }
+        ]
+      }
+    ],
+    "question": "What data was Priya Patel using around March 2025?",
+    "expected_answer": "Uses pandas for data manipulation",
+    "metadata": {
+      "query_timestamp": "2025-03-07",
+      "belief_at_timestamp": "Uses pandas for data manipulation",
+      "current_belief": "Switched to Polars for speed",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "delta-p004",
+    "scenario_type": "delta-efficiency",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses PyTorch for model training"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-13",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Jupyter notebooks for exploration"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-01-14",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses pandas for data manipulation"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s004",
+        "date": "2025-01-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses MLflow for experiment tracking"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s005",
+        "date": "2025-01-16",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Name is Priya Patel"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s006",
+        "date": "2025-01-17",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s007",
+        "date": "2025-01-18",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Priya Patel's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s008",
+        "date": "2025-01-19",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Priya Patel use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s009",
+        "date": "2025-01-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s010",
+        "date": "2025-01-21",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Priya Patel's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s011",
+        "date": "2025-01-22",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Priya Patel use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s012",
+        "date": "2025-01-23",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s013",
+        "date": "2025-01-24",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Priya Patel's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s014",
+        "date": "2025-01-25",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Priya Patel use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s015",
+        "date": "2025-01-26",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s016",
+        "date": "2025-01-27",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Priya Patel's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s017",
+        "date": "2025-01-28",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Priya Patel use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s018",
+        "date": "2025-01-29",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s019",
+        "date": "2025-01-30",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Priya Patel's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s020",
+        "date": "2025-01-31",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Priya Patel use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      }
+    ],
+    "question": "Measure context efficiency over 20 turns",
+    "expected_answer": "N/A \u2014 quantitative measurement",
+    "evaluation_turns": [
+      {
+        "question": "Can you remind me about Priya Patel's setup?",
+        "turn": 0
+      },
+      {
+        "question": "What tools does Priya Patel use?",
+        "turn": 1
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 2
+      },
+      {
+        "question": "Can you remind me about Priya Patel's setup?",
+        "turn": 3
+      },
+      {
+        "question": "What tools does Priya Patel use?",
+        "turn": 4
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 5
+      },
+      {
+        "question": "Can you remind me about Priya Patel's setup?",
+        "turn": 6
+      },
+      {
+        "question": "What tools does Priya Patel use?",
+        "turn": 7
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 8
+      },
+      {
+        "question": "Can you remind me about Priya Patel's setup?",
+        "turn": 9
+      },
+      {
+        "question": "What tools does Priya Patel use?",
+        "turn": 10
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 11
+      },
+      {
+        "question": "Can you remind me about Priya Patel's setup?",
+        "turn": 12
+      },
+      {
+        "question": "What tools does Priya Patel use?",
+        "turn": 13
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 14
+      },
+      {
+        "question": "Can you remind me about Priya Patel's setup?",
+        "turn": 15
+      },
+      {
+        "question": "What tools does Priya Patel use?",
+        "turn": 16
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 17
+      },
+      {
+        "question": "Can you remind me about Priya Patel's setup?",
+        "turn": 18
+      },
+      {
+        "question": "What tools does Priya Patel use?",
+        "turn": 19
+      }
+    ],
+    "metadata": {
+      "total_turns": 20,
+      "established_facts_by_turn_5": [
+        "Uses PyTorch for model training",
+        "Uses Jupyter notebooks for exploration",
+        "Uses pandas for data manipulation",
+        "Uses MLflow for experiment tracking",
+        "Name is Priya Patel"
+      ]
+    }
+  },
+  {
+    "scenario_id": "belief-p005-pm_tool",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Linear for project management"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you uses linear for project management."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-03-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Notion for project management. Team wanted everything in one tool."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you switched to notion for project management."
+          }
+        ]
+      }
+    ],
+    "question": "What pm tool does Tom O'Brien currently use?",
+    "expected_answer": "Switched to Notion for project management",
+    "metadata": {
+      "stale_answers": [
+        "Uses Linear for project management"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Uses Linear for project management",
+          "valid_from": "2025-01-15",
+          "valid_until": "2025-03-20",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Switched to Notion for project management",
+          "valid_from": "2025-03-20",
+          "valid_until": null,
+          "source_session": "s002"
+        }
+      ],
+      "update_count": 1,
+      "difficulty": "easy"
+    }
+  },
+  {
+    "scenario_id": "belief-p005-pm_tool",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Linear for project management"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you uses linear for project management."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-03-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Notion for project management. Team wanted everything in one tool."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you switched to notion for project management."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-06-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Back to Linear. Notion was too slow for sprint planning."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you back to linear."
+          }
+        ]
+      }
+    ],
+    "question": "What pm tool does Tom O'Brien currently use?",
+    "expected_answer": "Back to Linear",
+    "metadata": {
+      "stale_answers": [
+        "Uses Linear for project management",
+        "Switched to Notion for project management"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Uses Linear for project management",
+          "valid_from": "2025-01-15",
+          "valid_until": "2025-03-20",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Switched to Notion for project management",
+          "valid_from": "2025-03-20",
+          "valid_until": "2025-06-01",
+          "source_session": "s002"
+        },
+        {
+          "fact": "Back to Linear",
+          "valid_from": "2025-06-01",
+          "valid_until": null,
+          "source_session": "s003"
+        }
+      ],
+      "update_count": 2,
+      "difficulty": "medium"
+    }
+  },
+  {
+    "scenario_id": "belief-p005-analytics",
+    "scenario_type": "belief-update",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Amplitude for product analytics"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you uses amplitude for product analytics."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-04-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to PostHog. Wanted self-hosted analytics."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, noted that you switched to posthog."
+          }
+        ]
+      }
+    ],
+    "question": "What analytics does Tom O'Brien currently use?",
+    "expected_answer": "Switched to PostHog",
+    "metadata": {
+      "stale_answers": [
+        "Uses Amplitude for product analytics"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Uses Amplitude for product analytics",
+          "valid_from": "2025-01-15",
+          "valid_until": "2025-04-10",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Switched to PostHog",
+          "valid_from": "2025-04-10",
+          "valid_until": null,
+          "source_session": "s002"
+        }
+      ],
+      "update_count": 1,
+      "difficulty": "easy"
+    }
+  },
+  {
+    "scenario_id": "noise-p005-pm_tool",
+    "scenario_type": "noise-resistance",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What are some good VS Code extensions?"
+          },
+          {
+            "role": "assistant",
+            "content": "Popular ones include Prettier (formatting), ESLint (linting), GitLens (git history), and Thunder Client (API testing)."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-17",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its surrounding scope. Even after the outer function returns, the inner function retains access to those variables."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-01-19",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I read a file in Python?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `with open('file.txt', 'r') as f: content = f.read()`. The `with` statement ensures the file is properly closed."
+          }
+        ]
+      },
+      {
+        "session_id": "s004",
+        "date": "2025-01-21",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me write a regex to match email addresses?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Here's a common pattern: `^[\\w.-]+@[\\w.-]+\\.\\w+$`. Want me to explain each part?"
+          }
+        ]
+      },
+      {
+        "session_id": "s005",
+        "date": "2025-01-23",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its surrounding scope. Even after the outer function returns, the inner function retains access to those variables."
+          }
+        ]
+      },
+      {
+        "session_id": "s006",
+        "date": "2025-01-25",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me write a regex to match email addresses?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Here's a common pattern: `^[\\w.-]+@[\\w.-]+\\.\\w+$`. Want me to explain each part?"
+          }
+        ]
+      },
+      {
+        "session_id": "s007",
+        "date": "2025-01-27",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I read a file in Python?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `with open('file.txt', 'r') as f: content = f.read()`. The `with` statement ensures the file is properly closed."
+          }
+        ]
+      },
+      {
+        "session_id": "s008",
+        "date": "2025-01-29",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the weather like today?"
+          },
+          {
+            "role": "assistant",
+            "content": "I don't have access to real-time weather data, but you can check weather.com or use a weather API."
+          }
+        ]
+      },
+      {
+        "session_id": "s009",
+        "date": "2025-01-31",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's a good commit message format?"
+          },
+          {
+            "role": "assistant",
+            "content": "A common convention is: `type(scope): description`. For example: `fix(auth): handle expired tokens`. Keep the subject line under 72 characters."
+          }
+        ]
+      },
+      {
+        "session_id": "s010",
+        "date": "2025-02-02",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Linear for project management"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted, uses linear for project management."
+          }
+        ]
+      },
+      {
+        "session_id": "s011",
+        "date": "2025-02-04",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between a stack and a queue?"
+          },
+          {
+            "role": "assistant",
+            "content": "A stack is LIFO (last in, first out) \u2014 think of a stack of plates. A queue is FIFO (first in, first out) \u2014 like a line at a store."
+          }
+        ]
+      },
+      {
+        "session_id": "s012",
+        "date": "2025-02-06",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its surrounding scope. Even after the outer function returns, the inner function retains access to those variables."
+          }
+        ]
+      },
+      {
+        "session_id": "s013",
+        "date": "2025-02-08",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Explain Big O notation briefly"
+          },
+          {
+            "role": "assistant",
+            "content": "Big O describes how an algorithm's runtime grows with input size. O(1) is constant, O(n) is linear, O(n\u00b2) is quadratic. It measures the worst-case upper bound."
+          }
+        ]
+      },
+      {
+        "session_id": "s014",
+        "date": "2025-02-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I read a file in Python?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `with open('file.txt', 'r') as f: content = f.read()`. The `with` statement ensures the file is properly closed."
+          }
+        ]
+      },
+      {
+        "session_id": "s015",
+        "date": "2025-02-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its surrounding scope. Even after the outer function returns, the inner function retains access to those variables."
+          }
+        ]
+      },
+      {
+        "session_id": "s016",
+        "date": "2025-02-14",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me debug this error: KeyError 'user_id'?"
+          },
+          {
+            "role": "assistant",
+            "content": "A KeyError means the key doesn't exist in the dictionary. Check if 'user_id' is present before accessing it, or use `.get('user_id', default)`."
+          }
+        ]
+      },
+      {
+        "session_id": "s017",
+        "date": "2025-02-16",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the weather like today?"
+          },
+          {
+            "role": "assistant",
+            "content": "I don't have access to real-time weather data, but you can check weather.com or use a weather API."
+          }
+        ]
+      },
+      {
+        "session_id": "s018",
+        "date": "2025-02-18",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me debug this error: KeyError 'user_id'?"
+          },
+          {
+            "role": "assistant",
+            "content": "A KeyError means the key doesn't exist in the dictionary. Check if 'user_id' is present before accessing it, or use `.get('user_id', default)`."
+          }
+        ]
+      },
+      {
+        "session_id": "s019",
+        "date": "2025-02-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I center a div in CSS?"
+          },
+          {
+            "role": "assistant",
+            "content": "The modern way is `display: flex; justify-content: center; align-items: center;` on the parent container."
+          }
+        ]
+      },
+      {
+        "session_id": "s020",
+        "date": "2025-02-22",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's a good commit message format?"
+          },
+          {
+            "role": "assistant",
+            "content": "A common convention is: `type(scope): description`. For example: `fix(auth): handle expired tokens`. Keep the subject line under 72 characters."
+          }
+        ]
+      }
+    ],
+    "question": "What is Tom O'Brien's pm tool preference?",
+    "expected_answer": "Uses Linear for project management",
+    "metadata": {
+      "total_sessions": 20,
+      "signal_sessions": [
+        "s010"
+      ],
+      "noise_sessions": 19,
+      "signal_to_noise_ratio": 0.05,
+      "sub_category": "chitchat-filtering"
+    }
+  },
+  {
+    "scenario_id": "temporal-p005-pm_tool",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Linear for project management"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, uses linear for project management."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-03-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Notion for project management"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, switched to notion for project management."
+          }
+        ]
+      }
+    ],
+    "question": "What pm tool was Tom O'Brien using around February 2025?",
+    "expected_answer": "Uses Linear for project management",
+    "metadata": {
+      "query_timestamp": "2025-02-16",
+      "belief_at_timestamp": "Uses Linear for project management",
+      "current_belief": "Switched to Notion for project management",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "temporal-p005-pm_tool",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Linear for project management"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, uses linear for project management."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-03-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to Notion for project management"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, switched to notion for project management."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-06-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Back to Linear"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, back to linear."
+          }
+        ]
+      }
+    ],
+    "question": "What pm tool was Tom O'Brien using around February 2025?",
+    "expected_answer": "Uses Linear for project management",
+    "metadata": {
+      "query_timestamp": "2025-02-16",
+      "belief_at_timestamp": "Uses Linear for project management",
+      "current_belief": "Back to Linear",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "temporal-p005-analytics",
+    "scenario_type": "temporal-belief",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Amplitude for product analytics"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, uses amplitude for product analytics."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-04-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Switched to PostHog"
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, switched to posthog."
+          }
+        ]
+      }
+    ],
+    "question": "What analytics was Tom O'Brien using around February 2025?",
+    "expected_answer": "Uses Amplitude for product analytics",
+    "metadata": {
+      "query_timestamp": "2025-02-26",
+      "belief_at_timestamp": "Uses Amplitude for product analytics",
+      "current_belief": "Switched to PostHog",
+      "difficulty": "explicit-timestamp"
+    }
+  },
+  {
+    "scenario_id": "delta-p005",
+    "scenario_type": "delta-efficiency",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Linear for project management"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-16",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Team uses Slack for async communication"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-01-17",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Design team uses Figma"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s004",
+        "date": "2025-01-18",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Amplitude for product analytics"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s005",
+        "date": "2025-01-19",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Name is Tom O'Brien"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s006",
+        "date": "2025-01-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s007",
+        "date": "2025-01-21",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Tom O'Brien's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s008",
+        "date": "2025-01-22",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Tom O'Brien use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s009",
+        "date": "2025-01-23",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s010",
+        "date": "2025-01-24",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Tom O'Brien's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s011",
+        "date": "2025-01-25",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Tom O'Brien use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s012",
+        "date": "2025-01-26",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s013",
+        "date": "2025-01-27",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Tom O'Brien's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s014",
+        "date": "2025-01-28",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Tom O'Brien use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s015",
+        "date": "2025-01-29",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s016",
+        "date": "2025-01-30",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Tom O'Brien's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s017",
+        "date": "2025-01-31",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Tom O'Brien use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s018",
+        "date": "2025-02-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about the current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s019",
+        "date": "2025-02-02",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Tom O'Brien's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s020",
+        "date": "2025-02-03",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Tom O'Brien use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      }
+    ],
+    "question": "Measure context efficiency over 20 turns",
+    "expected_answer": "N/A \u2014 quantitative measurement",
+    "evaluation_turns": [
+      {
+        "question": "Can you remind me about Tom O'Brien's setup?",
+        "turn": 0
+      },
+      {
+        "question": "What tools does Tom O'Brien use?",
+        "turn": 1
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 2
+      },
+      {
+        "question": "Can you remind me about Tom O'Brien's setup?",
+        "turn": 3
+      },
+      {
+        "question": "What tools does Tom O'Brien use?",
+        "turn": 4
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 5
+      },
+      {
+        "question": "Can you remind me about Tom O'Brien's setup?",
+        "turn": 6
+      },
+      {
+        "question": "What tools does Tom O'Brien use?",
+        "turn": 7
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 8
+      },
+      {
+        "question": "Can you remind me about Tom O'Brien's setup?",
+        "turn": 9
+      },
+      {
+        "question": "What tools does Tom O'Brien use?",
+        "turn": 10
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 11
+      },
+      {
+        "question": "Can you remind me about Tom O'Brien's setup?",
+        "turn": 12
+      },
+      {
+        "question": "What tools does Tom O'Brien use?",
+        "turn": 13
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 14
+      },
+      {
+        "question": "Can you remind me about Tom O'Brien's setup?",
+        "turn": 15
+      },
+      {
+        "question": "What tools does Tom O'Brien use?",
+        "turn": 16
+      },
+      {
+        "question": "Tell me about the current project.",
+        "turn": 17
+      },
+      {
+        "question": "Can you remind me about Tom O'Brien's setup?",
+        "turn": 18
+      },
+      {
+        "question": "What tools does Tom O'Brien use?",
+        "turn": 19
+      }
+    ],
+    "metadata": {
+      "total_turns": 20,
+      "established_facts_by_turn_5": [
+        "Uses Linear for project management",
+        "Team uses Slack for async communication",
+        "Design team uses Figma",
+        "Uses Amplitude for product analytics",
+        "Name is Tom O'Brien"
+      ]
+    }
+  }
+]
