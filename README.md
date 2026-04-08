@@ -225,6 +225,11 @@ See `dataset_generation/` for the full pipeline:
 4. **Noise injection** — filler sessions from ShareGPT/UltraChat
 5. **Validation** — human evaluation on sample, inter-annotator agreement > 0.9
 
+## Limitations
+
+- **Temporal Belief** is the least novel dimension — other benchmarks (agent-memory-eval, Engram) test temporal reasoning in some form, though DeepMemEval's "what was believed at time X" framing is more specific.
+- **The dataset is programmatically generated**, not human-curated from real conversations. Scenarios are realistic but synthetic — real user conversations have messier language, topic drift, and ambiguity that templates don't fully capture.
+
 ## Citation
 
 ```bibtex
