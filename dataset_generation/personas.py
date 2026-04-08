@@ -2,6 +2,10 @@
 
 Each persona represents a synthetic user with evolving technology preferences,
 professional background, and communication style.
+
+All facts are phrased as STATES, not actions:
+  ✅ "Uses VS Code as primary editor"
+  ❌ "Switched to VS Code" / "Back to VS Code"
 """
 
 PERSONAS = [
@@ -13,15 +17,15 @@ PERSONAS = [
         "style": "technical",
         "timeline": [
             {"date": "2025-01-10", "category": "database", "fact": "Uses PostgreSQL for the main application database", "context": "Starting a new SaaS project"},
-            {"date": "2025-02-15", "category": "database", "fact": "Switched to SQLite for simplicity", "supersedes": 0, "context": "Realized the app doesn't need a full RDBMS yet"},
-            {"date": "2025-04-01", "category": "database", "fact": "Migrated to DuckDB for analytics workloads", "supersedes": 1, "context": "Added analytics features"},
-            {"date": "2025-01-10", "category": "language", "fact": "Building the backend in Python with Django"},
+            {"date": "2025-02-15", "category": "database", "fact": "Uses SQLite for the main application database", "supersedes": 0, "context": "Realized the app doesn't need a full RDBMS yet"},
+            {"date": "2025-04-01", "category": "database", "fact": "Uses DuckDB for analytics workloads", "supersedes": 1, "context": "Added analytics features"},
+            {"date": "2025-01-10", "category": "language", "fact": "Uses Python with Django for the backend"},
             {"date": "2025-01-15", "category": "testing", "fact": "Uses pytest for all backend tests", "depends_on": "language"},
             {"date": "2025-01-20", "category": "orm", "fact": "Uses Django ORM for database migrations", "depends_on": "language"},
-            {"date": "2025-03-10", "category": "language", "fact": "Rewrote the backend in Go", "supersedes": 3, "context": "Python was too slow for their throughput needs"},
+            {"date": "2025-03-10", "category": "language", "fact": "Uses Go for the backend", "supersedes": 3, "context": "Python was too slow for their throughput needs"},
             {"date": "2025-01-10", "category": "editor", "fact": "Uses VS Code as primary editor"},
-            {"date": "2025-02-20", "category": "editor", "fact": "Switched to Neovim", "supersedes": 7, "context": "Wanted a terminal-native workflow"},
-            {"date": "2025-05-01", "category": "editor", "fact": "Back to VS Code", "supersedes": 8, "context": "Neovim config was too much maintenance"},
+            {"date": "2025-02-20", "category": "editor", "fact": "Uses Neovim as primary editor", "supersedes": 7, "context": "Wanted a terminal-native workflow"},
+            {"date": "2025-05-01", "category": "editor", "fact": "Uses VS Code as primary editor again", "supersedes": 8, "context": "Neovim config was too much maintenance"},
             {"date": "2025-01-10", "category": "deployment", "fact": "Deploys on AWS ECS with blue-green deployment"},
             {"date": "2025-01-10", "category": "name", "fact": "Name is Alex Chen"},
             {"date": "2025-01-10", "category": "team", "fact": "Works at a startup called DataFlow with 5 engineers"},
@@ -35,15 +39,15 @@ PERSONAS = [
         "style": "casual",
         "timeline": [
             {"date": "2025-01-05", "category": "framework", "fact": "Uses React with TypeScript for the frontend"},
-            {"date": "2025-03-15", "category": "framework", "fact": "Migrated to Next.js for SSR", "supersedes": 0, "context": "SEO requirements"},
-            {"date": "2025-05-20", "category": "framework", "fact": "Switched to Svelte", "supersedes": 1, "context": "Next.js was too heavy"},
+            {"date": "2025-03-15", "category": "framework", "fact": "Uses Next.js for the frontend with SSR", "supersedes": 0, "context": "SEO requirements"},
+            {"date": "2025-05-20", "category": "framework", "fact": "Uses Svelte for the frontend", "supersedes": 1, "context": "Next.js was too heavy"},
             {"date": "2025-01-05", "category": "styling", "fact": "Uses Tailwind CSS for styling"},
-            {"date": "2025-04-10", "category": "styling", "fact": "Switched to vanilla CSS with CSS modules", "supersedes": 3, "context": "Tailwind classes were cluttering the markup"},
+            {"date": "2025-04-10", "category": "styling", "fact": "Uses vanilla CSS with CSS modules for styling", "supersedes": 3, "context": "Tailwind classes were cluttering the markup"},
             {"date": "2025-01-05", "category": "state", "fact": "Uses Redux for state management", "depends_on": "framework"},
-            {"date": "2025-01-05", "category": "testing", "fact": "Uses Jest and React Testing Library", "depends_on": "framework"},
+            {"date": "2025-01-05", "category": "testing", "fact": "Uses Jest and React Testing Library for frontend tests", "depends_on": "framework"},
             {"date": "2025-01-05", "category": "editor", "fact": "Uses WebStorm as primary IDE"},
-            {"date": "2025-01-05", "category": "deployment", "fact": "Deploys on Vercel"},
-            {"date": "2025-06-01", "category": "deployment", "fact": "Moved to Cloudflare Pages", "supersedes": 8, "context": "Cost savings"},
+            {"date": "2025-01-05", "category": "deployment", "fact": "Deploys the frontend on Vercel"},
+            {"date": "2025-06-01", "category": "deployment", "fact": "Deploys the frontend on Cloudflare Pages", "supersedes": 8, "context": "Cost savings"},
             {"date": "2025-01-05", "category": "name", "fact": "Name is Maria Santos"},
             {"date": "2025-01-05", "category": "team", "fact": "Works at a design agency called PixelCraft"},
         ],
@@ -56,12 +60,12 @@ PERSONAS = [
         "style": "concise",
         "timeline": [
             {"date": "2025-01-08", "category": "orchestration", "fact": "Uses Kubernetes on AWS EKS for container orchestration"},
-            {"date": "2025-04-20", "category": "orchestration", "fact": "Simplified to Docker Compose on a single server", "supersedes": 0, "context": "K8s was overkill for their scale"},
+            {"date": "2025-04-20", "category": "orchestration", "fact": "Uses Docker Compose on a single server for orchestration", "supersedes": 0, "context": "K8s was overkill for their scale"},
             {"date": "2025-01-08", "category": "ci", "fact": "Uses GitHub Actions for CI/CD"},
-            {"date": "2025-03-01", "category": "ci", "fact": "Switched to GitLab CI", "supersedes": 2, "context": "Company moved to GitLab"},
+            {"date": "2025-03-01", "category": "ci", "fact": "Uses GitLab CI for CI/CD", "supersedes": 2, "context": "Company moved to GitLab"},
             {"date": "2025-01-08", "category": "monitoring", "fact": "Uses Datadog for monitoring and alerting"},
             {"date": "2025-01-08", "category": "iac", "fact": "Uses Terraform for infrastructure as code"},
-            {"date": "2025-05-15", "category": "iac", "fact": "Switched to Pulumi", "supersedes": 5, "context": "Wanted to use real programming languages instead of HCL"},
+            {"date": "2025-05-15", "category": "iac", "fact": "Uses Pulumi for infrastructure as code", "supersedes": 5, "context": "Wanted to use real programming languages instead of HCL"},
             {"date": "2025-01-08", "category": "cloud", "fact": "Primary cloud provider is AWS"},
             {"date": "2025-01-08", "category": "name", "fact": "Name is James Kim"},
             {"date": "2025-01-08", "category": "team", "fact": "Works at a fintech company called PayScale with 50 engineers"},
@@ -75,11 +79,11 @@ PERSONAS = [
         "style": "verbose",
         "timeline": [
             {"date": "2025-01-12", "category": "ml_framework", "fact": "Uses PyTorch for model training"},
-            {"date": "2025-03-25", "category": "ml_framework", "fact": "Switched to JAX for better performance", "supersedes": 0},
+            {"date": "2025-03-25", "category": "ml_framework", "fact": "Uses JAX for model training", "supersedes": 0, "context": "Better performance on TPUs"},
             {"date": "2025-01-12", "category": "notebook", "fact": "Uses Jupyter notebooks for exploration"},
-            {"date": "2025-04-15", "category": "notebook", "fact": "Switched to Marimo for reactive notebooks", "supersedes": 2},
+            {"date": "2025-04-15", "category": "notebook", "fact": "Uses Marimo for reactive notebook exploration", "supersedes": 2, "context": "Better reproducibility"},
             {"date": "2025-01-12", "category": "data", "fact": "Uses pandas for data manipulation"},
-            {"date": "2025-05-01", "category": "data", "fact": "Switched to Polars for speed", "supersedes": 4},
+            {"date": "2025-05-01", "category": "data", "fact": "Uses Polars for data manipulation", "supersedes": 4, "context": "Much faster on large datasets"},
             {"date": "2025-01-12", "category": "experiment", "fact": "Uses MLflow for experiment tracking"},
             {"date": "2025-01-12", "category": "name", "fact": "Name is Priya Patel"},
             {"date": "2025-01-12", "category": "team", "fact": "Works at a healthtech startup called MedInsight"},
@@ -93,12 +97,12 @@ PERSONAS = [
         "style": "business",
         "timeline": [
             {"date": "2025-01-15", "category": "pm_tool", "fact": "Uses Linear for project management"},
-            {"date": "2025-03-20", "category": "pm_tool", "fact": "Switched to Notion for project management", "supersedes": 0, "context": "Team wanted everything in one tool"},
-            {"date": "2025-06-01", "category": "pm_tool", "fact": "Back to Linear", "supersedes": 1, "context": "Notion was too slow for sprint planning"},
+            {"date": "2025-03-20", "category": "pm_tool", "fact": "Uses Notion for project management", "supersedes": 0, "context": "Team wanted everything in one tool"},
+            {"date": "2025-06-01", "category": "pm_tool", "fact": "Uses Linear for project management again", "supersedes": 1, "context": "Notion was too slow for sprint planning"},
             {"date": "2025-01-15", "category": "communication", "fact": "Team uses Slack for async communication"},
             {"date": "2025-01-15", "category": "design", "fact": "Design team uses Figma"},
             {"date": "2025-01-15", "category": "analytics", "fact": "Uses Amplitude for product analytics"},
-            {"date": "2025-04-10", "category": "analytics", "fact": "Switched to PostHog", "supersedes": 5, "context": "Wanted self-hosted analytics"},
+            {"date": "2025-04-10", "category": "analytics", "fact": "Uses PostHog for product analytics", "supersedes": 5, "context": "Wanted self-hosted analytics"},
             {"date": "2025-01-15", "category": "name", "fact": "Name is Tom O'Brien"},
             {"date": "2025-01-15", "category": "team", "fact": "Leads product at a B2B SaaS company called CloudMetrics"},
         ],
