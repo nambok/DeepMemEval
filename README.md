@@ -30,7 +30,7 @@ In real agent deployments, facts change, noise accumulates, context windows have
 |----------|-------|--------|---------------|
 | **Belief Update** | 100 | 25% | When a fact changes, does the system return only the current belief? |
 | **Cascade Propagation** | 80 | 15% | When a root fact changes, are dependent beliefs also invalidated? |
-| **Noise Resistance** | 80 | 20% | Can the system find signal in 80 sessions of conversational noise? |
+| **Noise Resistance** | 80 | 20% | Can the system find signal in 20–40 sessions of conversational noise? |
 | **Temporal Belief** | 80 | 15% | Can the system answer "what was believed at time X?" |
 | **Delta Efficiency** | 80 | 10% | Does context size grow linearly or stay efficient over 20 turns? |
 | **Uncertainty Abstention** | 80 | 15% | Does the system express uncertainty when beliefs are partially invalidated? |
@@ -53,7 +53,7 @@ Question: "What database does the user currently use?"
 ❌ Incorrect: "PostgreSQL" or "SQLite" or "PostgreSQL, but they later switched to DuckDB"
 ```
 
-Difficulty levels: Easy (30) — single update, clear language. Medium (40) — multiple updates, implicit language. Hard (30) — contradictory updates with temporal reasoning.
+Difficulty levels: Easy — single update, clear language. Medium — multiple updates. Scenarios are weighted toward easy (2-step chains) with medium (3-step chains) for variety.
 
 #### 2. Cascade Propagation (80 scenarios)
 
@@ -72,13 +72,11 @@ Question: "What test framework does the user use for their backend?"
 
 #### 3. Noise Resistance (80 scenarios)
 
-3-5 important facts embedded within 50-100 sessions of realistic conversational noise. Tests whether the system stores everything (and drowns in noise) or extracts what matters.
+1 important fact embedded within 20–40 sessions of realistic conversational noise (chitchat, coding questions, general Q&A). Tests whether the system stores everything (and drowns in noise) or extracts what matters.
 
-Sub-categories:
-- **Restated facts** (20): Same fact in different words — should not produce duplicate memories
-- **Hallucination resistance** (20): Assistant hallucinated a fact — should not be stored as user truth
-- **Chitchat filtering** (20): Important facts buried in small talk
-- **System prompt leakage** (20): System prompt facts should not be re-stored as user memories
+Variants:
+- **Light noise** (40): 1 signal in 20 filler sessions (5% SNR)
+- **Heavy noise** (40): 1 signal in 40 filler sessions (2.5% SNR)
 
 #### 4. Temporal Belief Queries (80 scenarios)
 
@@ -93,19 +91,19 @@ Question: "What editor was the user using in April?"
 ✅ Correct: "Neovim"
 ```
 
-Difficulty levels: Explicit timestamps (30), relative timestamps (25), implicit timestamps (25).
+All scenarios use explicit timestamps — the question specifies a month/year and the system must return what was believed at that time, not the current state.
 
 #### 5. Delta Efficiency (80 scenarios)
 
 20-turn conversations measuring context tokens sent at turns 1, 5, 10, 15, 20. Systems that track what the agent already knows should send dramatically less on later turns.
 
-Efficiency score: `1 - (turn_20_tokens / (turn_1_tokens × 20))`
+Efficiency score: `1 - (total_tokens_turns_6_to_20 / (avg_tokens_turns_1_to_5 × 15))`
 
 #### 6. Uncertainty Abstention (80 scenarios)
 
 When beliefs are partially invalidated, conflicting, or ambiguous, the system should express uncertainty rather than returning stale data confidently.
 
-Sub-categories: Partially invalidated (20), conflicting sources (20), knowledge gaps (20), temporal ambiguity (20).
+All scenarios test partially-invalidated beliefs: a root fact changed (e.g., language switch) and a dependent belief (e.g., test framework) was never explicitly updated. The system should express uncertainty rather than confidently returning the stale dependent.
 
 ## Methodology
 
@@ -201,29 +199,31 @@ Each scenario contains:
 
 ```json
 {
-  "scenario_id": "belief-001",
+  "scenario_id": "belief-p001-database",
   "scenario_type": "belief-update",
   "conversation_history": [...],
-  "question": "What database does the user currently use?",
-  "expected_answer": "DuckDB",
-  "stale_answers": ["PostgreSQL", "SQLite"],
-  "belief_timeline": [
-    {"fact": "Uses PostgreSQL", "valid_from": "2025-01-15", "valid_until": "2025-02-20"},
-    {"fact": "Uses SQLite", "valid_from": "2025-02-20", "valid_until": "2025-03-10"},
-    {"fact": "Uses DuckDB", "valid_from": "2025-03-10", "valid_until": null}
-  ]
+  "question": "What database does Alex Chen currently use?",
+  "expected_answer": "Uses DuckDB for analytics workloads",
+  "metadata": {
+    "stale_answers": ["Uses PostgreSQL for the main application database", "Uses SQLite for the main application database"],
+    "belief_timeline": [
+      {"fact": "Uses PostgreSQL for the main application database", "valid_from": "2025-01-10", "valid_until": "2025-02-15"},
+      {"fact": "Uses SQLite for the main application database", "valid_from": "2025-02-15", "valid_until": "2025-04-01"},
+      {"fact": "Uses DuckDB for analytics workloads", "valid_from": "2025-04-01", "valid_until": null}
+    ],
+    "update_count": 2,
+    "difficulty": "medium"
+  }
 }
 ```
 
 ### Dataset Generation
 
-See `dataset_generation/` for the full pipeline:
+See `dataset_generation/` for the generation pipeline:
 
-1. **Persona generation** — 100 user personas with evolving preference timelines
-2. **Belief timeline construction** — ground-truth temporal fact chains with dependency annotations
-3. **Conversation generation** — LLM-generated sessions with human editing
-4. **Noise injection** — filler sessions from ShareGPT/UltraChat
-5. **Validation** — human evaluation on sample, inter-annotator agreement > 0.9
+1. **Persona generation** (`generate_personas.py`) — 50 synthetic user personas with evolving technology timelines, supersession chains, and dependency annotations
+2. **Scenario generation** (`generate_sample.py`) — produces 500 scenarios across all 6 categories from persona timelines, with balanced distribution and automated quality checks
+3. **Hand-written seed personas** (`personas.py`) — 5 curated personas used as templates
 
 ## Limitations
 

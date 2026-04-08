@@ -39,17 +39,18 @@ def load_adapter(adapter_path: str):
     sys.exit(1)
 
 
-def run_scenario(adapter, scenario: dict) -> dict:
-    """Run a single scenario against the adapter."""
+def run_scenario(adapter, scenario: dict, full_scenario: dict) -> dict:
+    """Run a single scenario against the adapter.
+
+    Args:
+        adapter: The memory system adapter.
+        scenario: Safe scenario dict with oracle fields stripped.
+        full_scenario: Original scenario (only used for non-oracle fields like query_timestamp).
+    """
     adapter.reset()
 
     scenario_type = scenario["scenario_type"]
     history = scenario["conversation_history"]
-
-    # Verify no oracle access
-    assert "belief_timeline" not in scenario.get("_accessible", {}), (
-        "Oracle access detected: belief_timeline must not be accessible during execution"
-    )
 
     # Ingest sessions sequentially
     for session in history:
@@ -71,7 +72,8 @@ def run_scenario(adapter, scenario: dict) -> dict:
         result["token_counts"] = token_counts
         result["response"] = f"Token counts over {len(turns)} turns: {token_counts}"
     elif scenario_type == "temporal-belief":
-        query_ts = scenario.get("metadata", {}).get("query_timestamp", "now")
+        # Read query_timestamp from full scenario metadata (not passed to adapter)
+        query_ts = full_scenario.get("metadata", {}).get("query_timestamp", "now")
         result["response"] = adapter.query(scenario["question"], timestamp=query_ts)
     else:
         result["response"] = adapter.query(scenario["question"])
@@ -103,16 +105,13 @@ def main():
     start = time.time()
 
     for scenario in tqdm(scenarios, desc="DeepMemEval"):
-        # Strip oracle fields before passing to adapter
-        safe_scenario = {
-            k: v
-            for k, v in scenario.items()
-            if k not in ("belief_timeline", "stale_answers", "metadata")
-        }
-        safe_scenario["_accessible"] = {}
+        # Strip oracle fields before passing to adapter — metadata contains
+        # ground-truth that systems must not access (belief_timeline, stale_answers, etc.)
+        oracle_keys = {"metadata"}
+        safe_scenario = {k: v for k, v in scenario.items() if k not in oracle_keys}
 
         try:
-            result = run_scenario(adapter, safe_scenario)
+            result = run_scenario(adapter, safe_scenario, full_scenario=scenario)
             results.append(result)
         except Exception as e:
             print(f"\nError on {scenario['scenario_id']}: {e}")

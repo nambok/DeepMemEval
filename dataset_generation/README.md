@@ -2,72 +2,52 @@
 
 ## Overview
 
-The DeepMemEval dataset is generated through a 5-phase pipeline that produces 500 curated scenarios with ground-truth belief timelines.
+The DeepMemEval dataset is generated through a programmatic pipeline that produces 500 scenarios with ground-truth belief timelines from 50 synthetic personas.
 
-## Phases
+## Pipeline
 
-### Phase 1: Persona Generation
+### Step 1: Persona Generation (`generate_personas.py`)
 
-Create 100 synthetic user personas with:
-- Professional background (developer, designer, PM, data scientist, devops, etc.)
-- Technology preferences that evolve over time
-- Project history with decisions, migrations, and tool changes
-- Communication style variations
+Programmatically generates 50 diverse personas by combining:
+- 50 unique name combinations from name pools
+- 15 professional roles (backend, frontend, devops, data science, PM, mobile, security, etc.)
+- 6 technology stack templates with realistic supersession chains and dependency edges
+- 30 company profiles
 
-Each persona is defined in `personas/` as a JSON file with a timeline of facts and decisions.
+Each persona has 8–14 timeline entries including:
+- Supersession chains (PostgreSQL → SQLite → DuckDB)
+- Dependency edges (pytest depends on Python — if language changes, testing is uncertain)
+- Stable facts (deployment, auth, monitoring — never change)
+- Identity (name, team, company)
 
-### Phase 2: Belief Timeline Construction
+### Step 2: Scenario Generation (`generate_sample.py`)
 
-For each persona, construct a ground-truth belief timeline:
-- Each belief has: `fact`, `valid_from`, `valid_until`, `source_session`, `superseded_by`
-- Dependency chains are annotated (fact A depends on fact B)
-- Contradiction pairs are explicitly marked
+Generates scenarios across all 6 categories from persona timelines:
+- **Belief Update** — one per supersession chain (longest chain per category)
+- **Cascade Propagation** — one per dependency edge where root was superseded
+- **Noise Resistance** — 1–2 per persona, signal buried in 20–40 filler sessions
+- **Temporal Belief** — one per supersession chain, querying a past time point
+- **Delta Efficiency** — one per persona, measuring token counts over 20 turns
+- **Uncertainty Abstention** — one per dependency edge invalidated by root change
 
-Output: `timelines/` directory with per-persona belief graphs.
+Raw generation produces ~730 scenarios. A balancing step trims to the target distribution (100/80/80/80/80/80 = 500).
 
-### Phase 3: Conversation Generation
+### Hand-Written Seed Personas (`personas.py`)
 
-Generate realistic multi-session conversations:
-- LLM-generated (GPT-4o) with human editing for naturalness
-- Facts are embedded naturally in conversation flow
-- Updates use varied language (explicit: "I switched to X", implicit: "we ended up going with X")
-- Session dates are realistic (days to weeks apart)
-
-### Phase 4: Noise Injection
-
-For noise-resistance scenarios:
-- Filler sessions sourced from realistic conversational data (ShareGPT, UltraChat)
-- Signal-to-noise ratio controlled per scenario
-- Automated check: no filler session accidentally contains answer information
-- Distractor facts injected at controlled similarity to real facts
-
-### Phase 5: Validation
-
-Quality assurance:
-- 3 human evaluators independently answer 50-question sample
-- Inter-annotator agreement > 0.9 required
-- Judge prompt validation: run judge on known-correct and known-incorrect responses
-- Edge case review: verify temporal boundary cases, cascade chain correctness
+5 hand-curated personas (Alex Chen, Maria Santos, James Kim, Priya Patel, Tom O'Brien) serve as readable examples and validation fixtures.
 
 ## Running
 
 ```bash
-# Generate personas
-python generate_personas.py --count 100 --output personas/
+# Generate the full 500-scenario dataset
+cd dataset_generation
+python3 generate_sample.py
 
-# Build belief timelines
-python build_timelines.py --personas personas/ --output timelines/
-
-# Generate conversations
-python generate_conversations.py --timelines timelines/ --output conversations/
-
-# Assemble scenarios with noise injection
-python assemble_scenarios.py \
-    --conversations conversations/ \
-    --timelines timelines/ \
-    --noise-source data/filler_sessions.json \
-    --output data/deepmemeval_500.json
-
-# Validate
-python validate_dataset.py --dataset data/deepmemeval_500.json
+# Output:
+#   ../data/deepmemeval_500.json (full dataset)
+#   ../data/deepmemeval_sample.json (10-scenario sample)
 ```
+
+## Filler Content
+
+Noise-resistance scenarios use 20 hand-written filler conversations (coding questions, general Q&A) embedded directly in `generate_sample.py`. These are generic and contain no overlap with persona facts.
