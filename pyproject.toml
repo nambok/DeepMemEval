@@ -24,6 +24,9 @@ dependencies = [
 baselines = [
     "chromadb>=0.4",
 ]
+dev = [
+    "pytest>=7.0",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

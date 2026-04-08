@@ -48,9 +48,7 @@ class TestDatasetSize:
     def test_sample_is_subset(self, dataset, sample):
         dataset_ids = {s["scenario_id"] for s in dataset}
         for s in sample:
-            sid = s["scenario_id"]
-            # Sample entries may be from dataset or standalone
-            assert "scenario_type" in s
+            assert s["scenario_id"] in dataset_ids, f"sample scenario {s['scenario_id']} not in full dataset"
 
 
 class TestScenarioStructure:

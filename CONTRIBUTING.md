@@ -113,7 +113,7 @@ DeepMemEval/
 If you've run the benchmark against a system, submit results as a PR:
 
 1. Add your adapter to `adapters/`
-2. Add your full results JSON to `results/`
+2. Add your full results JSON to `results/` (use `git add -f` — results are gitignored by default)
 3. Include in the PR description:
    - System name and version
    - Model and embedding provider

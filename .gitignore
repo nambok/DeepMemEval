@@ -2,6 +2,7 @@ __pycache__/
 *.pyc
 *.pyo
 *.egg-info/
+*.egg
 dist/
 build/
 .env
@@ -11,3 +12,6 @@ venv/
 results/*.json
 results/*.eval-*
 .DS_Store
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

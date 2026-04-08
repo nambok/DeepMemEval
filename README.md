@@ -111,7 +111,7 @@ DeepMemEval uses a rigorous, reproducible evaluation methodology.
 
 ### Judge
 
-- **Model**: `gpt-4o` (`temperature=0`, `max_tokens=10`, `seed=42`)
+- **Model**: `gpt-4o-2024-08-06` (`temperature=0`, `max_tokens=10`, `seed=42`)
 - **Scoring**: Binary yes/no per scenario
 - **Per-category prompt templates** tailored to each evaluation dimension
 
@@ -161,7 +161,7 @@ python run_deepmemeval.py \
 # Evaluate
 export OPENAI_API_KEY=your-key
 python evaluate.py \
-  --judge gpt-4o \
+  --judge gpt-4o-2024-08-06 \
   --results results/your_system.json \
   --reference data/deepmemeval_500.json
 ```
