@@ -1,0 +1,7 @@
+# Results
+
+System evaluation results are saved here.
+
+Each result file contains per-scenario responses and evaluation labels.
+Results are excluded from version control (`.gitignore`) to keep the repo clean.
+Published results for baseline systems are in `published/`.
