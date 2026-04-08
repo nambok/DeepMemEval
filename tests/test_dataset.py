@@ -156,11 +156,13 @@ class TestDeltaScenarios:
 
 class TestUncertaintyScenarios:
     def test_expected_is_uncertain(self, dataset):
+        uncertainty_markers = ["uncertain", "unclear", "possibly", "unknown", "can't say", "not confirmed"]
         for s in dataset:
             if s["scenario_type"] != "uncertainty-abstention":
                 continue
-            assert s["expected_answer"] == "Uncertain", (
-                f"{s['scenario_id']}: expected should be 'Uncertain', got '{s['expected_answer']}'"
+            answer_lower = s["expected_answer"].lower()
+            assert any(m in answer_lower for m in uncertainty_markers), (
+                f"{s['scenario_id']}: expected answer should express uncertainty, got '{s['expected_answer'][:80]}'"
             )
 
     def test_has_reason(self, dataset):

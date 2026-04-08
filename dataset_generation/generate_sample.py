@@ -64,6 +64,70 @@ FILLER_CONVERSATIONS = [
 ]
 
 
+# --- Question phrasing templates ---
+
+BELIEF_QUESTIONS = [
+    "What {cat} does {name} currently use?",
+    "Which {cat} has {name} settled on?",
+    "What's {name}'s current {cat}?",
+    "What {cat} is {name} working with now?",
+    "What did {name} most recently adopt for {cat}?",
+]
+
+NOISE_QUESTIONS = [
+    "What is {name}'s {cat} preference?",
+    "What does {name} use for {cat}?",
+    "Do you know what {cat} {name} chose?",
+    "What {cat} does {name} rely on?",
+    "Which {cat} did {name} go with?",
+]
+
+CASCADE_QUESTIONS = [
+    "What {cat} does {name} currently use?",
+    "Is {name} still using the same {cat}?",
+    "What's {name}'s current {cat} setup?",
+    "Given recent changes, what {cat} does {name} use?",
+]
+
+TEMPORAL_EXPLICIT_QUESTIONS = [
+    "What {cat} was {name} using around {date}?",
+    "What was {name}'s {cat} back in {date}?",
+    "Which {cat} did {name} have in {date}?",
+    "Around {date}, what {cat} was {name} on?",
+]
+
+TEMPORAL_RELATIVE_QUESTIONS = [
+    "What {cat} was {name} using before switching to {current}?",
+    "Before the move to {current}, what {cat} did {name} have?",
+    "What {cat} did {name} use prior to adopting {current}?",
+    "Before {name} switched to {current}, what was their {cat}?",
+]
+
+UNCERTAINTY_QUESTIONS = [
+    "Does {name} still use {tool} for {cat}?",
+    "Is {name} still on {tool} for {cat}?",
+    "Is {tool} still {name}'s {cat} choice?",
+    "Should I assume {name} is still using {tool} for {cat}?",
+    "Has {name} confirmed they're still on {tool} for {cat}?",
+]
+
+UNCERTAINTY_ANSWERS = [
+    "Uncertain — {dep} was selected alongside {old_root}, but {name} has since moved to {new_root}. No explicit update was made to {cat}.",
+    "This is unclear. {dep} was chosen when {name} used {old_root}, but now they use {new_root}. The {cat} choice was never revisited.",
+    "Possibly, but it hasn't been confirmed. {name} switched from {old_root} to {new_root}, which may have affected their {cat}.",
+    "Unknown. {dep} depended on {old_root}, and {name} migrated to {new_root}. Whether the {cat} changed too was never discussed.",
+    "Can't say with confidence. {name}'s {cat} ({dep}) was tied to {old_root}, which was replaced by {new_root}.",
+]
+
+DELTA_QUESTIONS = [
+    "Can you remind me about {name}'s setup?",
+    "What tools does {name} use?",
+    "Tell me about {name}'s current project.",
+    "Summarize {name}'s tech stack for me.",
+    "What do you know about {name}'s preferences?",
+]
+
+
 def make_turns(user_msg: str, assistant_msg: str) -> list:
     return [
         {"role": "user", "content": user_msg},
@@ -86,6 +150,10 @@ def make_session(session_id: str, date: str, user_msg: str, assistant_msg: str) 
         "date": date,
         "turns": make_turns(user_msg, assistant_msg),
     }
+
+
+def _pick(templates: list, **kwargs) -> str:
+    return random.choice(templates).format(**kwargs)
 
 
 # ─── Belief Update ──────────────────────────────────────────────────────────
@@ -123,12 +191,13 @@ def generate_belief_update_scenarios(persona: dict) -> list:
         current = chain[-1]
         stale = [f["fact"] for f in chain[:-1]]
         difficulty = "easy" if len(chain) == 2 else "medium" if len(chain) == 3 else "hard"
+        cat_label = entry["category"].replace("_", " ")
 
         scenarios.append({
             "scenario_id": f"belief-{persona['id']}-{entry['category']}",
             "scenario_type": "belief-update",
             "conversation_history": history,
-            "question": f"What {entry['category'].replace('_', ' ')} does {persona['name']} currently use?",
+            "question": _pick(BELIEF_QUESTIONS, cat=cat_label, name=persona["name"]),
             "expected_answer": current["fact"],
             "metadata": {
                 "stale_answers": stale,
@@ -187,7 +256,7 @@ def generate_cascade_scenarios(persona: dict) -> list:
             "scenario_id": f"cascade-{persona['id']}-{entry['category']}-via-{root_category}",
             "scenario_type": "cascade-propagation",
             "conversation_history": history,
-            "question": f"What {cat_label} does {persona['name']} currently use?",
+            "question": _pick(CASCADE_QUESTIONS, cat=cat_label, name=persona["name"]),
             "expected_answer": (
                 f"Uncertain — {entry['fact']} was chosen when "
                 f"{original_root['fact'].lower()}, but now "
@@ -258,7 +327,7 @@ def generate_noise_scenarios(persona: dict, max_per_persona: int = 2) -> list:
             "scenario_id": f"noise-{persona['id']}-{fact['category']}-{cfg['label']}",
             "scenario_type": "noise-resistance",
             "conversation_history": history,
-            "question": f"What is {persona['name']}'s {cat_label} preference?",
+            "question": _pick(NOISE_QUESTIONS, cat=cat_label, name=persona["name"]),
             "expected_answer": fact["fact"],
             "metadata": {
                 "total_sessions": total,
@@ -275,11 +344,15 @@ def generate_noise_scenarios(persona: dict, max_per_persona: int = 2) -> list:
 # ─── Temporal Belief ─────────────────────────────────────────────────────────
 
 def generate_temporal_scenarios(persona: dict) -> list:
-    """One scenario per supersession chain, querying a past time point."""
+    """One scenario per supersession chain, querying a past time point.
+
+    ~50% explicit timestamps, ~50% relative references.
+    """
     scenarios = []
     timeline = persona["timeline"]
 
     seen_categories = set()
+    scenario_index = 0
     for i in range(len(timeline) - 1, -1, -1):
         entry = timeline[i]
         if "supersedes" not in entry or entry["category"] in seen_categories:
@@ -307,17 +380,33 @@ def generate_temporal_scenarios(persona: dict) -> list:
         query_date = first_date + (second_date - first_date) / 2
         cat_label = entry["category"].replace("_", " ")
 
+        use_relative = (scenario_index % 2 == 1)
+        scenario_index += 1
+
+        if use_relative:
+            current_tool = _extract_tool_name(chain[-1]["fact"])
+            question = _pick(TEMPORAL_RELATIVE_QUESTIONS,
+                           cat=cat_label, name=persona["name"],
+                           current=current_tool)
+            difficulty = "relative-reference"
+        else:
+            date_str = query_date.strftime("%B %Y")
+            question = _pick(TEMPORAL_EXPLICIT_QUESTIONS,
+                           cat=cat_label, name=persona["name"],
+                           date=date_str)
+            difficulty = "explicit-timestamp"
+
         scenarios.append({
             "scenario_id": f"temporal-{persona['id']}-{entry['category']}",
             "scenario_type": "temporal-belief",
             "conversation_history": history,
-            "question": f"What {cat_label} was {persona['name']} using around {query_date.strftime('%B %Y')}?",
+            "question": question,
             "expected_answer": chain[0]["fact"],
             "metadata": {
                 "query_timestamp": query_date.strftime("%Y-%m-%d"),
                 "belief_at_timestamp": chain[0]["fact"],
                 "current_belief": chain[-1]["fact"],
-                "difficulty": "explicit-timestamp",
+                "difficulty": difficulty,
             },
         })
 
@@ -341,17 +430,12 @@ def generate_delta_scenarios(persona: dict) -> list:
         session_date = (base_date + timedelta(days=j)).strftime("%Y-%m-%d")
         history.append(make_session(f"s{j+1:03d}", session_date, fact["fact"], "Noted."))
 
-    questions = [
-        f"Can you remind me about {persona['name']}'s setup?",
-        f"What tools does {persona['name']} use?",
-        f"Tell me about the current project.",
-    ]
     for j in range(5, 20):
         session_date = (base_date + timedelta(days=j)).strftime("%Y-%m-%d")
-        q = questions[j % len(questions)]
+        q = _pick(DELTA_QUESTIONS, name=persona["name"])
         history.append(make_session(f"s{j+1:03d}", session_date, q, "Here's what I know..."))
 
-    eval_turns = [{"question": q, "turn": j} for j, q in enumerate(questions * 7)][:20]
+    eval_turns = [{"question": _pick(DELTA_QUESTIONS, name=persona["name"]), "turn": j} for j in range(20)]
 
     return [{
         "scenario_id": f"delta-{persona['id']}",
@@ -368,6 +452,23 @@ def generate_delta_scenarios(persona: dict) -> list:
 
 
 # ─── Uncertainty Abstention ──────────────────────────────────────────────────
+
+def _extract_tool_name(fact: str) -> str:
+    """Extract the tool/technology name from a fact string like 'Uses pytest for ...'."""
+    words = fact.split()
+    if len(words) > 1:
+        # "Uses pytest for ..." -> "pytest"
+        # "Uses Docker Compose for ..." -> "Docker Compose"
+        for_idx = None
+        for i, w in enumerate(words):
+            if w.lower() == "for":
+                for_idx = i
+                break
+        if for_idx and for_idx > 1:
+            return " ".join(words[1:for_idx])
+        return words[1]
+    return words[0]
+
 
 def generate_uncertainty_scenarios(persona: dict) -> list:
     """One scenario per dependency edge invalidated by root change."""
@@ -393,17 +494,21 @@ def generate_uncertainty_scenarios(persona: dict) -> list:
             make_session("s003", latest_root["date"], latest_root["fact"], "Big change!"),
         ]
 
-        # Extract tool name: "Uses pytest for ..." -> "pytest"
-        fact_words = entry["fact"].split()
-        tool_name = fact_words[1] if len(fact_words) > 1 else fact_words[0]
+        tool_name = _extract_tool_name(entry["fact"])
         cat_label = entry["category"].replace("_", " ")
+        old_root_short = _extract_tool_name(original_root["fact"])
+        new_root_short = _extract_tool_name(latest_root["fact"])
 
         scenarios.append({
             "scenario_id": f"uncertain-{persona['id']}-{entry['category']}-via-{root_category}",
             "scenario_type": "uncertainty-abstention",
             "conversation_history": history,
-            "question": f"Does {persona['name']} still use {tool_name} for {cat_label}?",
-            "expected_answer": "Uncertain",
+            "question": _pick(UNCERTAINTY_QUESTIONS,
+                            name=persona["name"], tool=tool_name, cat=cat_label),
+            "expected_answer": _pick(UNCERTAINTY_ANSWERS,
+                                    dep=entry["fact"], old_root=original_root["fact"],
+                                    new_root=latest_root["fact"], name=persona["name"],
+                                    cat=cat_label),
             "metadata": {
                 "uncertainty_reason": (
                     f"Root fact changed ({original_root['fact']} → {latest_root['fact']}), "

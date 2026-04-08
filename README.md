@@ -91,7 +91,7 @@ Question: "What editor was the user using in April?"
 ✅ Correct: "Neovim"
 ```
 
-All scenarios use explicit timestamps — the question specifies a month/year and the system must return what was believed at that time, not the current state.
+All scenarios use explicit timestamps — the question specifies a month/year and the system must return what was believed at that time, not the current state. Approximately half use relative references ("before switching to X") instead of calendar dates, testing whether the system can resolve temporal relationships from context.
 
 #### 5. Delta Efficiency (80 scenarios)
 
@@ -103,7 +103,7 @@ Efficiency score: `1 - (total_tokens_turns_6_to_20 / (avg_tokens_turns_1_to_5 ×
 
 When beliefs are partially invalidated, conflicting, or ambiguous, the system should express uncertainty rather than returning stale data confidently.
 
-All scenarios test partially-invalidated beliefs: a root fact changed (e.g., language switch) and a dependent belief (e.g., test framework) was never explicitly updated. The system should express uncertainty rather than confidently returning the stale dependent.
+All scenarios test partially-invalidated beliefs: a root fact changed (e.g., language switch) and a dependent belief (e.g., test framework) was never explicitly updated. The system should express uncertainty rather than confidently returning the stale dependent. Each scenario has a unique, contextual expected answer explaining what changed and why confidence is low.
 
 ## Methodology
 

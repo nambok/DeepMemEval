@@ -1,53 +1,53 @@
 [
   {
-    "scenario_id": "belief-p031-styling",
+    "scenario_id": "belief-p025-ci",
     "scenario_type": "belief-update",
     "conversation_history": [
       {
         "session_id": "s001",
-        "date": "2025-01-19",
+        "date": "2025-01-28",
         "turns": [
           {
             "role": "user",
-            "content": "Uses Tailwind CSS for styling"
+            "content": "Uses Jenkins for CI/CD pipelines"
           },
           {
             "role": "assistant",
-            "content": "Got it, noted that you uses tailwind css for styling."
+            "content": "Got it, noted that you uses jenkins for ci/cd pipelines."
           }
         ]
       },
       {
         "session_id": "s002",
-        "date": "2025-03-21",
+        "date": "2025-03-31",
         "turns": [
           {
             "role": "user",
-            "content": "Uses vanilla CSS with Svelte scoped styles. Simplicity."
+            "content": "Uses Drone CI for CI/CD pipelines. Container-native CI."
           },
           {
             "role": "assistant",
-            "content": "Got it, noted that you uses vanilla css with svelte scoped styles."
+            "content": "Got it, noted that you uses drone ci for ci/cd pipelines."
           }
         ]
       }
     ],
-    "question": "What styling does Kofi Jensen currently use?",
-    "expected_answer": "Uses vanilla CSS with Svelte scoped styles",
+    "question": "What's Andre Torres's current ci?",
+    "expected_answer": "Uses Drone CI for CI/CD pipelines",
     "metadata": {
       "stale_answers": [
-        "Uses Tailwind CSS for styling"
+        "Uses Jenkins for CI/CD pipelines"
       ],
       "belief_timeline": [
         {
-          "fact": "Uses Tailwind CSS for styling",
-          "valid_from": "2025-01-19",
-          "valid_until": "2025-03-21",
+          "fact": "Uses Jenkins for CI/CD pipelines",
+          "valid_from": "2025-01-28",
+          "valid_until": "2025-03-31",
           "source_session": "s001"
         },
         {
-          "fact": "Uses vanilla CSS with Svelte scoped styles",
-          "valid_from": "2025-03-21",
+          "fact": "Uses Drone CI for CI/CD pipelines",
+          "valid_from": "2025-03-31",
           "valid_until": null,
           "source_session": "s002"
         }
@@ -57,30 +57,30 @@
     }
   },
   {
-    "scenario_id": "cascade-p048-service_mesh-via-orchestration",
+    "scenario_id": "cascade-p005-preprocessing-via-data_processing",
     "scenario_type": "cascade-propagation",
     "conversation_history": [
       {
         "session_id": "s001",
-        "date": "2025-01-10",
+        "date": "2025-01-28",
         "turns": [
           {
             "role": "user",
-            "content": "Uses Docker Swarm for container orchestration"
+            "content": "Uses pandas for data processing"
           },
           {
             "role": "assistant",
-            "content": "Sounds good, uses docker swarm for container orchestration."
+            "content": "Sounds good, uses pandas for data processing."
           }
         ]
       },
       {
         "session_id": "s002",
-        "date": "2025-01-23",
+        "date": "2025-02-02",
         "turns": [
           {
             "role": "user",
-            "content": "Uses Consul for service discovery"
+            "content": "Uses pandas-compatible preprocessing pipelines"
           },
           {
             "role": "assistant",
@@ -90,138 +90,54 @@
       },
       {
         "session_id": "s003",
-        "date": "2025-02-27",
+        "date": "2025-03-03",
         "turns": [
           {
             "role": "user",
-            "content": "Uses Nomad for workload orchestration. Lighter weight than Kubernetes"
+            "content": "Uses Polars for data processing. 10x faster on large datasets"
           },
           {
             "role": "assistant",
-            "content": "That's a big change! Uses Nomad for workload orchestration."
+            "content": "That's a big change! Uses Polars for data processing."
           }
         ]
       }
     ],
-    "question": "What service mesh does Kira Hoffman currently use?",
-    "expected_answer": "Uncertain \u2014 Uses Consul for service discovery was chosen when uses docker swarm for container orchestration, but now uses nomad for workload orchestration",
+    "question": "What's Sarah Tanaka's current preprocessing setup?",
+    "expected_answer": "Uncertain \u2014 Uses pandas-compatible preprocessing pipelines was chosen when uses pandas for data processing, but now uses polars for data processing",
     "metadata": {
-      "root_change": "Uses Docker Swarm for container orchestration \u2192 Uses Nomad for workload orchestration",
-      "old_dependent": "Uses Consul for service discovery",
+      "root_change": "Uses pandas for data processing \u2192 Uses Polars for data processing",
+      "old_dependent": "Uses pandas-compatible preprocessing pipelines",
       "dependency_chain": [
         {
-          "fact": "Uses Consul for service discovery",
-          "depends_on": "Uses Docker Swarm for container orchestration"
+          "fact": "Uses pandas-compatible preprocessing pipelines",
+          "depends_on": "Uses pandas for data processing"
         }
       ],
       "chain_depth": 1
     }
   },
   {
-    "scenario_id": "noise-p049-feature_store-heavy",
+    "scenario_id": "noise-p005-feature_store-heavy",
     "scenario_type": "noise-resistance",
     "conversation_history": [
       {
         "session_id": "s001",
-        "date": "2025-01-16",
+        "date": "2025-01-27",
         "turns": [
           {
             "role": "user",
-            "content": "What's the difference between SQL and NoSQL?"
+            "content": "What's a microservice?"
           },
           {
             "role": "assistant",
-            "content": "SQL databases are relational with fixed schemas. NoSQL databases are flexible \u2014 document, key-value, graph, etc."
+            "content": "A small, independently deployable service that does one thing well and communicates via APIs."
           }
         ]
       },
       {
         "session_id": "s002",
-        "date": "2025-01-18",
-        "turns": [
-          {
-            "role": "user",
-            "content": "How do I handle errors in async JavaScript?"
-          },
-          {
-            "role": "assistant",
-            "content": "Wrap await calls in try/catch blocks, or chain .catch() on promises."
-          }
-        ]
-      },
-      {
-        "session_id": "s003",
-        "date": "2025-01-20",
-        "turns": [
-          {
-            "role": "user",
-            "content": "How do I read a file in Python?"
-          },
-          {
-            "role": "assistant",
-            "content": "Use `with open('file.txt') as f: content = f.read()`."
-          }
-        ]
-      },
-      {
-        "session_id": "s004",
-        "date": "2025-01-22",
-        "turns": [
-          {
-            "role": "user",
-            "content": "How do I handle errors in async JavaScript?"
-          },
-          {
-            "role": "assistant",
-            "content": "Wrap await calls in try/catch blocks, or chain .catch() on promises."
-          }
-        ]
-      },
-      {
-        "session_id": "s005",
-        "date": "2025-01-24",
-        "turns": [
-          {
-            "role": "user",
-            "content": "How do I set up SSH keys for GitHub?"
-          },
-          {
-            "role": "assistant",
-            "content": "Run `ssh-keygen -t ed25519`, then add the public key to GitHub Settings > SSH Keys."
-          }
-        ]
-      },
-      {
-        "session_id": "s006",
-        "date": "2025-01-26",
-        "turns": [
-          {
-            "role": "user",
-            "content": "What's the CAP theorem?"
-          },
-          {
-            "role": "assistant",
-            "content": "In a distributed system, you can only guarantee two of: Consistency, Availability, Partition tolerance."
-          }
-        ]
-      },
-      {
-        "session_id": "s007",
-        "date": "2025-01-28",
-        "turns": [
-          {
-            "role": "user",
-            "content": "How do I reverse a linked list?"
-          },
-          {
-            "role": "assistant",
-            "content": "Iterate through, reassigning each node's next pointer to the previous node."
-          }
-        ]
-      },
-      {
-        "session_id": "s008",
-        "date": "2025-01-30",
+        "date": "2025-01-29",
         "turns": [
           {
             "role": "user",
@@ -234,8 +150,36 @@
         ]
       },
       {
-        "session_id": "s009",
-        "date": "2025-02-01",
+        "session_id": "s003",
+        "date": "2025-01-31",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I reverse a linked list?"
+          },
+          {
+            "role": "assistant",
+            "content": "Iterate through, reassigning each node's next pointer to the previous node."
+          }
+        ]
+      },
+      {
+        "session_id": "s004",
+        "date": "2025-02-02",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I center a div in CSS?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `display: flex; justify-content: center; align-items: center;` on the parent."
+          }
+        ]
+      },
+      {
+        "session_id": "s005",
+        "date": "2025-02-04",
         "turns": [
           {
             "role": "user",
@@ -248,36 +192,92 @@
         ]
       },
       {
-        "session_id": "s010",
-        "date": "2025-02-03",
+        "session_id": "s006",
+        "date": "2025-02-06",
         "turns": [
           {
             "role": "user",
-            "content": "Can you explain what a closure is?"
+            "content": "What's the difference between a stack and a queue?"
           },
           {
             "role": "assistant",
-            "content": "A closure is a function that captures variables from its enclosing scope."
+            "content": "A stack is LIFO (last in, first out). A queue is FIFO (first in, first out)."
+          }
+        ]
+      },
+      {
+        "session_id": "s007",
+        "date": "2025-02-08",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I handle errors in async JavaScript?"
+          },
+          {
+            "role": "assistant",
+            "content": "Wrap await calls in try/catch blocks, or chain .catch() on promises."
+          }
+        ]
+      },
+      {
+        "session_id": "s008",
+        "date": "2025-02-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me write a regex to match email addresses?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Here's a common pattern: `^[\\w.-]+@[\\w.-]+\\.\\w+$`."
+          }
+        ]
+      },
+      {
+        "session_id": "s009",
+        "date": "2025-02-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between SQL and NoSQL?"
+          },
+          {
+            "role": "assistant",
+            "content": "SQL databases are relational with fixed schemas. NoSQL databases are flexible \u2014 document, key-value, graph, etc."
+          }
+        ]
+      },
+      {
+        "session_id": "s010",
+        "date": "2025-02-14",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I center a div in CSS?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `display: flex; justify-content: center; align-items: center;` on the parent."
           }
         ]
       },
       {
         "session_id": "s011",
-        "date": "2025-02-05",
+        "date": "2025-02-16",
         "turns": [
           {
             "role": "user",
-            "content": "How do I set up SSH keys for GitHub?"
+            "content": "What's the difference between HTTP and HTTPS?"
           },
           {
             "role": "assistant",
-            "content": "Run `ssh-keygen -t ed25519`, then add the public key to GitHub Settings > SSH Keys."
+            "content": "HTTPS adds TLS encryption on top of HTTP. All modern sites should use HTTPS."
           }
         ]
       },
       {
         "session_id": "s012",
-        "date": "2025-02-07",
+        "date": "2025-02-18",
         "turns": [
           {
             "role": "user",
@@ -291,203 +291,35 @@
       },
       {
         "session_id": "s013",
-        "date": "2025-02-09",
+        "date": "2025-02-20",
         "turns": [
           {
             "role": "user",
-            "content": "Can you help me debug this KeyError?"
+            "content": "How do I handle errors in async JavaScript?"
           },
           {
             "role": "assistant",
-            "content": "A KeyError means the key doesn't exist. Use `.get(key, default)` instead."
+            "content": "Wrap await calls in try/catch blocks, or chain .catch() on promises."
           }
         ]
       },
       {
         "session_id": "s014",
-        "date": "2025-02-11",
+        "date": "2025-02-22",
         "turns": [
           {
             "role": "user",
-            "content": "How do I read a file in Python?"
+            "content": "What are environment variables used for?"
           },
           {
             "role": "assistant",
-            "content": "Use `with open('file.txt') as f: content = f.read()`."
+            "content": "Storing configuration like API keys, database URLs, and feature flags outside the code."
           }
         ]
       },
       {
         "session_id": "s015",
-        "date": "2025-02-13",
-        "turns": [
-          {
-            "role": "user",
-            "content": "What's the difference between SQL and NoSQL?"
-          },
-          {
-            "role": "assistant",
-            "content": "SQL databases are relational with fixed schemas. NoSQL databases are flexible \u2014 document, key-value, graph, etc."
-          }
-        ]
-      },
-      {
-        "session_id": "s016",
-        "date": "2025-02-15",
-        "turns": [
-          {
-            "role": "user",
-            "content": "How do I center a div in CSS?"
-          },
-          {
-            "role": "assistant",
-            "content": "Use `display: flex; justify-content: center; align-items: center;` on the parent."
-          }
-        ]
-      },
-      {
-        "session_id": "s017",
-        "date": "2025-02-17",
-        "turns": [
-          {
-            "role": "user",
-            "content": "What's the difference between a stack and a queue?"
-          },
-          {
-            "role": "assistant",
-            "content": "A stack is LIFO (last in, first out). A queue is FIFO (first in, first out)."
-          }
-        ]
-      },
-      {
-        "session_id": "s018",
-        "date": "2025-02-19",
-        "turns": [
-          {
-            "role": "user",
-            "content": "Explain Big O notation briefly"
-          },
-          {
-            "role": "assistant",
-            "content": "Big O describes algorithm runtime growth. O(1) is constant, O(n) linear, O(n\u00b2) quadratic."
-          }
-        ]
-      },
-      {
-        "session_id": "s019",
-        "date": "2025-02-21",
-        "turns": [
-          {
-            "role": "user",
-            "content": "Can you help me write a regex to match email addresses?"
-          },
-          {
-            "role": "assistant",
-            "content": "Sure! Here's a common pattern: `^[\\w.-]+@[\\w.-]+\\.\\w+$`."
-          }
-        ]
-      },
-      {
-        "session_id": "s020",
-        "date": "2025-02-23",
-        "turns": [
-          {
-            "role": "user",
-            "content": "What's the difference between HTTP and HTTPS?"
-          },
-          {
-            "role": "assistant",
-            "content": "HTTPS adds TLS encryption on top of HTTP. All modern sites should use HTTPS."
-          }
-        ]
-      },
-      {
-        "session_id": "s021",
-        "date": "2025-02-25",
-        "turns": [
-          {
-            "role": "user",
-            "content": "What are some good VS Code extensions?"
-          },
-          {
-            "role": "assistant",
-            "content": "Popular ones: Prettier, ESLint, GitLens, and Thunder Client."
-          }
-        ]
-      },
-      {
-        "session_id": "s022",
-        "date": "2025-02-27",
-        "turns": [
-          {
-            "role": "user",
-            "content": "Can you explain what a closure is?"
-          },
-          {
-            "role": "assistant",
-            "content": "A closure is a function that captures variables from its enclosing scope."
-          }
-        ]
-      },
-      {
-        "session_id": "s023",
-        "date": "2025-03-01",
-        "turns": [
-          {
-            "role": "user",
-            "content": "Uses Feast for the feature store"
-          },
-          {
-            "role": "assistant",
-            "content": "Noted, uses feast for the feature store."
-          }
-        ]
-      },
-      {
-        "session_id": "s024",
-        "date": "2025-03-03",
-        "turns": [
-          {
-            "role": "user",
-            "content": "How do I center a div in CSS?"
-          },
-          {
-            "role": "assistant",
-            "content": "Use `display: flex; justify-content: center; align-items: center;` on the parent."
-          }
-        ]
-      },
-      {
-        "session_id": "s025",
-        "date": "2025-03-05",
-        "turns": [
-          {
-            "role": "user",
-            "content": "What's the difference between HTTP and HTTPS?"
-          },
-          {
-            "role": "assistant",
-            "content": "HTTPS adds TLS encryption on top of HTTP. All modern sites should use HTTPS."
-          }
-        ]
-      },
-      {
-        "session_id": "s026",
-        "date": "2025-03-07",
-        "turns": [
-          {
-            "role": "user",
-            "content": "How do I read a file in Python?"
-          },
-          {
-            "role": "assistant",
-            "content": "Use `with open('file.txt') as f: content = f.read()`."
-          }
-        ]
-      },
-      {
-        "session_id": "s027",
-        "date": "2025-03-09",
+        "date": "2025-02-24",
         "turns": [
           {
             "role": "user",
@@ -500,120 +332,78 @@
         ]
       },
       {
-        "session_id": "s028",
-        "date": "2025-03-11",
+        "session_id": "s016",
+        "date": "2025-02-26",
         "turns": [
           {
             "role": "user",
-            "content": "How do I read a file in Python?"
+            "content": "How do I handle errors in async JavaScript?"
           },
           {
             "role": "assistant",
-            "content": "Use `with open('file.txt') as f: content = f.read()`."
+            "content": "Wrap await calls in try/catch blocks, or chain .catch() on promises."
           }
         ]
       },
       {
-        "session_id": "s029",
-        "date": "2025-03-13",
+        "session_id": "s017",
+        "date": "2025-02-28",
         "turns": [
           {
             "role": "user",
-            "content": "How do I center a div in CSS?"
+            "content": "Explain Big O notation briefly"
           },
           {
             "role": "assistant",
-            "content": "Use `display: flex; justify-content: center; align-items: center;` on the parent."
+            "content": "Big O describes algorithm runtime growth. O(1) is constant, O(n) linear, O(n\u00b2) quadratic."
           }
         ]
       },
       {
-        "session_id": "s030",
-        "date": "2025-03-15",
+        "session_id": "s018",
+        "date": "2025-03-02",
         "turns": [
           {
             "role": "user",
-            "content": "How do I profile Python code?"
+            "content": "Uses Feast for the feature store"
           },
           {
             "role": "assistant",
-            "content": "Use `cProfile` for function-level profiling or `py-spy` for sampling profiling with flamegraphs."
+            "content": "Noted, uses feast for the feature store."
           }
         ]
       },
       {
-        "session_id": "s031",
-        "date": "2025-03-17",
+        "session_id": "s019",
+        "date": "2025-03-04",
         "turns": [
           {
             "role": "user",
-            "content": "How do I center a div in CSS?"
+            "content": "Can you explain what a closure is?"
           },
           {
             "role": "assistant",
-            "content": "Use `display: flex; justify-content: center; align-items: center;` on the parent."
+            "content": "A closure is a function that captures variables from its enclosing scope."
           }
         ]
       },
       {
-        "session_id": "s032",
-        "date": "2025-03-19",
+        "session_id": "s020",
+        "date": "2025-03-06",
         "turns": [
           {
             "role": "user",
-            "content": "What's the difference between HTTP and HTTPS?"
+            "content": "What's the CAP theorem?"
           },
           {
             "role": "assistant",
-            "content": "HTTPS adds TLS encryption on top of HTTP. All modern sites should use HTTPS."
+            "content": "In a distributed system, you can only guarantee two of: Consistency, Availability, Partition tolerance."
           }
         ]
       },
       {
-        "session_id": "s033",
-        "date": "2025-03-21",
-        "turns": [
-          {
-            "role": "user",
-            "content": "How does garbage collection work?"
-          },
-          {
-            "role": "assistant",
-            "content": "The runtime periodically frees memory that's no longer referenced. Python uses reference counting + cycle detection."
-          }
-        ]
-      },
-      {
-        "session_id": "s034",
-        "date": "2025-03-23",
-        "turns": [
-          {
-            "role": "user",
-            "content": "How does garbage collection work?"
-          },
-          {
-            "role": "assistant",
-            "content": "The runtime periodically frees memory that's no longer referenced. Python uses reference counting + cycle detection."
-          }
-        ]
-      },
-      {
-        "session_id": "s035",
-        "date": "2025-03-25",
-        "turns": [
-          {
-            "role": "user",
-            "content": "How do I set up SSH keys for GitHub?"
-          },
-          {
-            "role": "assistant",
-            "content": "Run `ssh-keygen -t ed25519`, then add the public key to GitHub Settings > SSH Keys."
-          }
-        ]
-      },
-      {
-        "session_id": "s036",
-        "date": "2025-03-27",
+        "session_id": "s021",
+        "date": "2025-03-08",
         "turns": [
           {
             "role": "user",
@@ -626,22 +416,22 @@
         ]
       },
       {
-        "session_id": "s037",
-        "date": "2025-03-29",
+        "session_id": "s022",
+        "date": "2025-03-10",
         "turns": [
           {
             "role": "user",
-            "content": "How do I handle errors in async JavaScript?"
+            "content": "What's the difference between HTTP and HTTPS?"
           },
           {
             "role": "assistant",
-            "content": "Wrap await calls in try/catch blocks, or chain .catch() on promises."
+            "content": "HTTPS adds TLS encryption on top of HTTP. All modern sites should use HTTPS."
           }
         ]
       },
       {
-        "session_id": "s038",
-        "date": "2025-03-31",
+        "session_id": "s023",
+        "date": "2025-03-12",
         "turns": [
           {
             "role": "user",
@@ -654,8 +444,8 @@
         ]
       },
       {
-        "session_id": "s039",
-        "date": "2025-04-02",
+        "session_id": "s024",
+        "date": "2025-03-14",
         "turns": [
           {
             "role": "user",
@@ -668,8 +458,50 @@
         ]
       },
       {
-        "session_id": "s040",
-        "date": "2025-04-04",
+        "session_id": "s025",
+        "date": "2025-03-16",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between SQL and NoSQL?"
+          },
+          {
+            "role": "assistant",
+            "content": "SQL databases are relational with fixed schemas. NoSQL databases are flexible \u2014 document, key-value, graph, etc."
+          }
+        ]
+      },
+      {
+        "session_id": "s026",
+        "date": "2025-03-18",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I reverse a linked list?"
+          },
+          {
+            "role": "assistant",
+            "content": "Iterate through, reassigning each node's next pointer to the previous node."
+          }
+        ]
+      },
+      {
+        "session_id": "s027",
+        "date": "2025-03-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I center a div in CSS?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `display: flex; justify-content: center; align-items: center;` on the parent."
+          }
+        ]
+      },
+      {
+        "session_id": "s028",
+        "date": "2025-03-22",
         "turns": [
           {
             "role": "user",
@@ -680,14 +512,182 @@
             "content": "Wrap await calls in try/catch blocks, or chain .catch() on promises."
           }
         ]
+      },
+      {
+        "session_id": "s029",
+        "date": "2025-03-24",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its enclosing scope."
+          }
+        ]
+      },
+      {
+        "session_id": "s030",
+        "date": "2025-03-26",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me debug this KeyError?"
+          },
+          {
+            "role": "assistant",
+            "content": "A KeyError means the key doesn't exist. Use `.get(key, default)` instead."
+          }
+        ]
+      },
+      {
+        "session_id": "s031",
+        "date": "2025-03-28",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I handle errors in async JavaScript?"
+          },
+          {
+            "role": "assistant",
+            "content": "Wrap await calls in try/catch blocks, or chain .catch() on promises."
+          }
+        ]
+      },
+      {
+        "session_id": "s032",
+        "date": "2025-03-30",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What are environment variables used for?"
+          },
+          {
+            "role": "assistant",
+            "content": "Storing configuration like API keys, database URLs, and feature flags outside the code."
+          }
+        ]
+      },
+      {
+        "session_id": "s033",
+        "date": "2025-04-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the CAP theorem?"
+          },
+          {
+            "role": "assistant",
+            "content": "In a distributed system, you can only guarantee two of: Consistency, Availability, Partition tolerance."
+          }
+        ]
+      },
+      {
+        "session_id": "s034",
+        "date": "2025-04-03",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's a microservice?"
+          },
+          {
+            "role": "assistant",
+            "content": "A small, independently deployable service that does one thing well and communicates via APIs."
+          }
+        ]
+      },
+      {
+        "session_id": "s035",
+        "date": "2025-04-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I center a div in CSS?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `display: flex; justify-content: center; align-items: center;` on the parent."
+          }
+        ]
+      },
+      {
+        "session_id": "s036",
+        "date": "2025-04-07",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the CAP theorem?"
+          },
+          {
+            "role": "assistant",
+            "content": "In a distributed system, you can only guarantee two of: Consistency, Availability, Partition tolerance."
+          }
+        ]
+      },
+      {
+        "session_id": "s037",
+        "date": "2025-04-09",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Explain Big O notation briefly"
+          },
+          {
+            "role": "assistant",
+            "content": "Big O describes algorithm runtime growth. O(1) is constant, O(n) linear, O(n\u00b2) quadratic."
+          }
+        ]
+      },
+      {
+        "session_id": "s038",
+        "date": "2025-04-11",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between HTTP and HTTPS?"
+          },
+          {
+            "role": "assistant",
+            "content": "HTTPS adds TLS encryption on top of HTTP. All modern sites should use HTTPS."
+          }
+        ]
+      },
+      {
+        "session_id": "s039",
+        "date": "2025-04-13",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me debug this KeyError?"
+          },
+          {
+            "role": "assistant",
+            "content": "A KeyError means the key doesn't exist. Use `.get(key, default)` instead."
+          }
+        ]
+      },
+      {
+        "session_id": "s040",
+        "date": "2025-04-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between HTTP and HTTPS?"
+          },
+          {
+            "role": "assistant",
+            "content": "HTTPS adds TLS encryption on top of HTTP. All modern sites should use HTTPS."
+          }
+        ]
       }
     ],
-    "question": "What is Emil Lee's feature store preference?",
+    "question": "What does Sarah Tanaka use for feature store?",
     "expected_answer": "Uses Feast for the feature store",
     "metadata": {
       "total_sessions": 40,
       "signal_sessions": [
-        "s023"
+        "s018"
       ],
       "noise_sessions": 39,
       "signal_to_noise_ratio": 0.025,
@@ -695,45 +695,45 @@
     }
   },
   {
-    "scenario_id": "temporal-p035-ml_framework",
+    "scenario_id": "temporal-p038-scanner",
     "scenario_type": "temporal-belief",
     "conversation_history": [
       {
         "session_id": "s001",
-        "date": "2025-01-22",
+        "date": "2025-01-12",
         "turns": [
           {
             "role": "user",
-            "content": "Uses PyTorch for model training"
+            "content": "Uses Snyk for dependency vulnerability scanning"
           },
           {
             "role": "assistant",
-            "content": "Got it, uses pytorch for model training."
+            "content": "Got it, uses snyk for dependency vulnerability scanning."
           }
         ]
       },
       {
         "session_id": "s002",
-        "date": "2025-04-04",
+        "date": "2025-02-18",
         "turns": [
           {
             "role": "user",
-            "content": "Uses JAX for model training"
+            "content": "Uses Grype for dependency vulnerability scanning"
           },
           {
             "role": "assistant",
-            "content": "Got it, uses jax for model training."
+            "content": "Got it, uses grype for dependency vulnerability scanning."
           }
         ]
       }
     ],
-    "question": "What ml framework was Arjun Moreau using around February 2025?",
-    "expected_answer": "Uses PyTorch for model training",
+    "question": "What scanner did Dina Andersen use prior to adopting Grype?",
+    "expected_answer": "Uses Snyk for dependency vulnerability scanning",
     "metadata": {
-      "query_timestamp": "2025-02-27",
-      "belief_at_timestamp": "Uses PyTorch for model training",
-      "current_belief": "Uses JAX for model training",
-      "difficulty": "explicit-timestamp"
+      "query_timestamp": "2025-01-30",
+      "belief_at_timestamp": "Uses Snyk for dependency vulnerability scanning",
+      "current_belief": "Uses Grype for dependency vulnerability scanning",
+      "difficulty": "relative-reference"
     }
   },
   {
@@ -816,7 +816,7 @@
         "turns": [
           {
             "role": "user",
-            "content": "Tell me about the current project."
+            "content": "Summarize Alex Chen's tech stack for me."
           },
           {
             "role": "assistant",
@@ -858,7 +858,7 @@
         "turns": [
           {
             "role": "user",
-            "content": "Tell me about the current project."
+            "content": "Tell me about Alex Chen's current project."
           },
           {
             "role": "assistant",
@@ -872,7 +872,7 @@
         "turns": [
           {
             "role": "user",
-            "content": "Can you remind me about Alex Chen's setup?"
+            "content": "What do you know about Alex Chen's preferences?"
           },
           {
             "role": "assistant",
@@ -900,7 +900,7 @@
         "turns": [
           {
             "role": "user",
-            "content": "Tell me about the current project."
+            "content": "Tell me about Alex Chen's current project."
           },
           {
             "role": "assistant",
@@ -914,7 +914,7 @@
         "turns": [
           {
             "role": "user",
-            "content": "Can you remind me about Alex Chen's setup?"
+            "content": "Summarize Alex Chen's tech stack for me."
           },
           {
             "role": "assistant",
@@ -928,7 +928,7 @@
         "turns": [
           {
             "role": "user",
-            "content": "What tools does Alex Chen use?"
+            "content": "Summarize Alex Chen's tech stack for me."
           },
           {
             "role": "assistant",
@@ -942,7 +942,7 @@
         "turns": [
           {
             "role": "user",
-            "content": "Tell me about the current project."
+            "content": "Can you remind me about Alex Chen's setup?"
           },
           {
             "role": "assistant",
@@ -970,7 +970,7 @@
         "turns": [
           {
             "role": "user",
-            "content": "What tools does Alex Chen use?"
+            "content": "What do you know about Alex Chen's preferences?"
           },
           {
             "role": "assistant",
@@ -984,7 +984,7 @@
         "turns": [
           {
             "role": "user",
-            "content": "Tell me about the current project."
+            "content": "What tools does Alex Chen use?"
           },
           {
             "role": "assistant",
@@ -998,7 +998,7 @@
         "turns": [
           {
             "role": "user",
-            "content": "Can you remind me about Alex Chen's setup?"
+            "content": "What tools does Alex Chen use?"
           },
           {
             "role": "assistant",
@@ -1012,7 +1012,7 @@
         "turns": [
           {
             "role": "user",
-            "content": "What tools does Alex Chen use?"
+            "content": "Tell me about Alex Chen's current project."
           },
           {
             "role": "assistant",
@@ -1025,27 +1025,27 @@
     "expected_answer": "N/A \u2014 quantitative measurement",
     "evaluation_turns": [
       {
-        "question": "Can you remind me about Alex Chen's setup?",
+        "question": "What do you know about Alex Chen's preferences?",
         "turn": 0
       },
       {
-        "question": "What tools does Alex Chen use?",
+        "question": "Can you remind me about Alex Chen's setup?",
         "turn": 1
       },
       {
-        "question": "Tell me about the current project.",
+        "question": "What do you know about Alex Chen's preferences?",
         "turn": 2
       },
       {
-        "question": "Can you remind me about Alex Chen's setup?",
+        "question": "Summarize Alex Chen's tech stack for me.",
         "turn": 3
       },
       {
-        "question": "What tools does Alex Chen use?",
+        "question": "Can you remind me about Alex Chen's setup?",
         "turn": 4
       },
       {
-        "question": "Tell me about the current project.",
+        "question": "What tools does Alex Chen use?",
         "turn": 5
       },
       {
@@ -1053,55 +1053,55 @@
         "turn": 6
       },
       {
-        "question": "What tools does Alex Chen use?",
+        "question": "Summarize Alex Chen's tech stack for me.",
         "turn": 7
       },
       {
-        "question": "Tell me about the current project.",
+        "question": "Can you remind me about Alex Chen's setup?",
         "turn": 8
       },
       {
-        "question": "Can you remind me about Alex Chen's setup?",
+        "question": "What tools does Alex Chen use?",
         "turn": 9
       },
       {
-        "question": "What tools does Alex Chen use?",
+        "question": "Summarize Alex Chen's tech stack for me.",
         "turn": 10
       },
       {
-        "question": "Tell me about the current project.",
+        "question": "Tell me about Alex Chen's current project.",
         "turn": 11
       },
       {
-        "question": "Can you remind me about Alex Chen's setup?",
+        "question": "What do you know about Alex Chen's preferences?",
         "turn": 12
       },
       {
-        "question": "What tools does Alex Chen use?",
+        "question": "Tell me about Alex Chen's current project.",
         "turn": 13
       },
       {
-        "question": "Tell me about the current project.",
+        "question": "Summarize Alex Chen's tech stack for me.",
         "turn": 14
       },
       {
-        "question": "Can you remind me about Alex Chen's setup?",
+        "question": "Summarize Alex Chen's tech stack for me.",
         "turn": 15
       },
       {
-        "question": "What tools does Alex Chen use?",
+        "question": "Summarize Alex Chen's tech stack for me.",
         "turn": 16
       },
       {
-        "question": "Tell me about the current project.",
+        "question": "What tools does Alex Chen use?",
         "turn": 17
       },
       {
-        "question": "Can you remind me about Alex Chen's setup?",
+        "question": "Summarize Alex Chen's tech stack for me.",
         "turn": 18
       },
       {
-        "question": "What tools does Alex Chen use?",
+        "question": "What do you know about Alex Chen's preferences?",
         "turn": 19
       }
     ],
@@ -1117,61 +1117,7 @@
     }
   },
   {
-    "scenario_id": "uncertain-p025-pipeline_config-via-ci",
-    "scenario_type": "uncertainty-abstention",
-    "conversation_history": [
-      {
-        "session_id": "s001",
-        "date": "2025-01-28",
-        "turns": [
-          {
-            "role": "user",
-            "content": "Uses Jenkins for CI/CD pipelines"
-          },
-          {
-            "role": "assistant",
-            "content": "Got it."
-          }
-        ]
-      },
-      {
-        "session_id": "s002",
-        "date": "2025-02-03",
-        "turns": [
-          {
-            "role": "user",
-            "content": "Uses Jenkinsfile declarative pipelines"
-          },
-          {
-            "role": "assistant",
-            "content": "Makes sense."
-          }
-        ]
-      },
-      {
-        "session_id": "s003",
-        "date": "2025-03-31",
-        "turns": [
-          {
-            "role": "user",
-            "content": "Uses Drone CI for CI/CD pipelines"
-          },
-          {
-            "role": "assistant",
-            "content": "Big change!"
-          }
-        ]
-      }
-    ],
-    "question": "Does Andre Torres still use Jenkinsfile for pipeline config?",
-    "expected_answer": "Uncertain",
-    "metadata": {
-      "uncertainty_reason": "Root fact changed (Uses Jenkins for CI/CD pipelines \u2192 Uses Drone CI for CI/CD pipelines), dependent belief 'Uses Jenkinsfile declarative pipelines' was never explicitly updated",
-      "sub_category": "partially-invalidated"
-    }
-  },
-  {
-    "scenario_id": "uncertain-p002-orm-via-language",
+    "scenario_id": "uncertain-p049-model_serving-via-ml_framework",
     "scenario_type": "uncertainty-abstention",
     "conversation_history": [
       {
@@ -1180,7 +1126,7 @@
         "turns": [
           {
             "role": "user",
-            "content": "Uses Node.js with Express for the backend"
+            "content": "Uses PyTorch for model training"
           },
           {
             "role": "assistant",
@@ -1190,11 +1136,11 @@
       },
       {
         "session_id": "s002",
-        "date": "2025-01-21",
+        "date": "2025-01-27",
         "turns": [
           {
             "role": "user",
-            "content": "Uses Prisma ORM for database access"
+            "content": "Uses TorchServe for model serving"
           },
           {
             "role": "assistant",
@@ -1204,11 +1150,11 @@
       },
       {
         "session_id": "s003",
-        "date": "2025-02-27",
+        "date": "2025-02-28",
         "turns": [
           {
             "role": "user",
-            "content": "Uses TypeScript with NestJS for the backend"
+            "content": "Uses JAX for model training"
           },
           {
             "role": "assistant",
@@ -1217,156 +1163,1067 @@
         ]
       }
     ],
-    "question": "Does James Kim still use Prisma for orm?",
-    "expected_answer": "Uncertain",
+    "question": "Has Emil Lee confirmed they're still on TorchServe for model serving?",
+    "expected_answer": "Can't say with confidence. Emil Lee's model serving (Uses TorchServe for model serving) was tied to Uses PyTorch for model training, which was replaced by Uses JAX for model training.",
     "metadata": {
-      "uncertainty_reason": "Root fact changed (Uses Node.js with Express for the backend \u2192 Uses TypeScript with NestJS for the backend), dependent belief 'Uses Prisma ORM for database access' was never explicitly updated",
+      "uncertainty_reason": "Root fact changed (Uses PyTorch for model training \u2192 Uses JAX for model training), dependent belief 'Uses TorchServe for model serving' was never explicitly updated",
       "sub_category": "partially-invalidated"
     }
   },
   {
-    "scenario_id": "temporal-p022-state",
+    "scenario_id": "temporal-p007-framework",
     "scenario_type": "temporal-belief",
     "conversation_history": [
       {
         "session_id": "s001",
-        "date": "2025-01-29",
+        "date": "2025-01-15",
         "turns": [
           {
             "role": "user",
-            "content": "Uses MobX for mobile state management"
+            "content": "Uses SwiftUI for the iOS app"
           },
           {
             "role": "assistant",
-            "content": "Got it, uses mobx for mobile state management."
+            "content": "Got it, uses swiftui for the ios app."
           }
         ]
       },
       {
         "session_id": "s002",
-        "date": "2025-03-08",
+        "date": "2025-02-21",
         "turns": [
           {
             "role": "user",
-            "content": "Uses Riverpod for mobile state management"
+            "content": "Uses Kotlin Multiplatform for the mobile app"
           },
           {
             "role": "assistant",
-            "content": "Got it, uses riverpod for mobile state management."
+            "content": "Got it, uses kotlin multiplatform for the mobile app."
           }
         ]
       }
     ],
-    "question": "What state was Aisha Park using around February 2025?",
-    "expected_answer": "Uses MobX for mobile state management",
+    "question": "Before Carlos Okafor switched to Kotlin Multiplatform, what was their framework?",
+    "expected_answer": "Uses SwiftUI for the iOS app",
     "metadata": {
-      "query_timestamp": "2025-02-17",
-      "belief_at_timestamp": "Uses MobX for mobile state management",
-      "current_belief": "Uses Riverpod for mobile state management",
-      "difficulty": "explicit-timestamp"
+      "query_timestamp": "2025-02-02",
+      "belief_at_timestamp": "Uses SwiftUI for the iOS app",
+      "current_belief": "Uses Kotlin Multiplatform for the mobile app",
+      "difficulty": "relative-reference"
     }
   },
   {
-    "scenario_id": "cascade-p032-testing-via-framework",
-    "scenario_type": "cascade-propagation",
+    "scenario_id": "belief-p013-cache",
+    "scenario_type": "belief-update",
     "conversation_history": [
       {
         "session_id": "s001",
-        "date": "2025-01-19",
+        "date": "2025-02-01",
         "turns": [
           {
             "role": "user",
-            "content": "Uses Angular for the frontend"
+            "content": "Uses Redis for caching"
           },
           {
             "role": "assistant",
-            "content": "Sounds good, uses angular for the frontend."
+            "content": "Got it, noted that you uses redis for caching."
           }
         ]
       },
       {
         "session_id": "s002",
-        "date": "2025-01-17",
+        "date": "2025-03-09",
         "turns": [
           {
             "role": "user",
-            "content": "Uses Karma with Jasmine for frontend tests"
+            "content": "Uses Memcached for caching. Simpler caching needs."
           },
           {
             "role": "assistant",
-            "content": "Makes sense given your setup."
+            "content": "Got it, noted that you uses memcached for caching."
+          }
+        ]
+      }
+    ],
+    "question": "Which cache has Zara Costa settled on?",
+    "expected_answer": "Uses Memcached for caching",
+    "metadata": {
+      "stale_answers": [
+        "Uses Redis for caching"
+      ],
+      "belief_timeline": [
+        {
+          "fact": "Uses Redis for caching",
+          "valid_from": "2025-02-01",
+          "valid_until": "2025-03-09",
+          "source_session": "s001"
+        },
+        {
+          "fact": "Uses Memcached for caching",
+          "valid_from": "2025-03-09",
+          "valid_until": null,
+          "source_session": "s002"
+        }
+      ],
+      "update_count": 1,
+      "difficulty": "easy"
+    }
+  },
+  {
+    "scenario_id": "delta-p027",
+    "scenario_type": "delta-efficiency",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-13",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Vue 3 with Composition API for the frontend"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s002",
+        "date": "2025-01-14",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses UnoCSS for styling"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
           }
         ]
       },
       {
         "session_id": "s003",
-        "date": "2025-04-04",
+        "date": "2025-01-15",
         "turns": [
           {
             "role": "user",
-            "content": "Uses SolidJS for the frontend. Better fine-grained reactivity"
+            "content": "Uses Vite as the frontend build tool"
           },
           {
             "role": "assistant",
-            "content": "That's a big change! Uses SolidJS for the frontend."
+            "content": "Noted."
           }
         ]
-      }
-    ],
-    "question": "What testing does Hana Kovalenko currently use?",
-    "expected_answer": "Uncertain \u2014 Uses Karma with Jasmine for frontend tests was chosen when uses angular for the frontend, but now uses solidjs for the frontend",
-    "metadata": {
-      "root_change": "Uses Angular for the frontend \u2192 Uses SolidJS for the frontend",
-      "old_dependent": "Uses Karma with Jasmine for frontend tests",
-      "dependency_chain": [
-        {
-          "fact": "Uses Karma with Jasmine for frontend tests",
-          "depends_on": "Uses Angular for the frontend"
-        }
-      ],
-      "chain_depth": 1
-    }
-  },
-  {
-    "scenario_id": "temporal-p028-database",
-    "scenario_type": "temporal-belief",
-    "conversation_history": [
+      },
       {
-        "session_id": "s001",
+        "session_id": "s004",
+        "date": "2025-01-16",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Vue I18n for internationalization"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s005",
+        "date": "2025-01-17",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses Pinia for state management"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted."
+          }
+        ]
+      },
+      {
+        "session_id": "s006",
+        "date": "2025-01-18",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Felix Schmidt use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s007",
+        "date": "2025-01-19",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What do you know about Felix Schmidt's preferences?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s008",
+        "date": "2025-01-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What do you know about Felix Schmidt's preferences?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s009",
+        "date": "2025-01-21",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Felix Schmidt's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s010",
+        "date": "2025-01-22",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Felix Schmidt use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s011",
+        "date": "2025-01-23",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Felix Schmidt use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s012",
         "date": "2025-01-24",
         "turns": [
           {
             "role": "user",
-            "content": "Uses Oracle Database for the primary database"
+            "content": "What tools does Felix Schmidt use?"
           },
           {
             "role": "assistant",
-            "content": "Got it, uses oracle database for the primary database."
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s013",
+        "date": "2025-01-25",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Felix Schmidt's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s014",
+        "date": "2025-01-26",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Felix Schmidt use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s015",
+        "date": "2025-01-27",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Felix Schmidt's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s016",
+        "date": "2025-01-28",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Summarize Felix Schmidt's tech stack for me."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s017",
+        "date": "2025-01-29",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you remind me about Felix Schmidt's setup?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s018",
+        "date": "2025-01-30",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about Felix Schmidt's current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s019",
+        "date": "2025-01-31",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What tools does Felix Schmidt use?"
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      },
+      {
+        "session_id": "s020",
+        "date": "2025-02-01",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Tell me about Felix Schmidt's current project."
+          },
+          {
+            "role": "assistant",
+            "content": "Here's what I know..."
+          }
+        ]
+      }
+    ],
+    "question": "Measure context efficiency over 20 turns",
+    "expected_answer": "N/A \u2014 quantitative measurement",
+    "evaluation_turns": [
+      {
+        "question": "Tell me about Felix Schmidt's current project.",
+        "turn": 0
+      },
+      {
+        "question": "Summarize Felix Schmidt's tech stack for me.",
+        "turn": 1
+      },
+      {
+        "question": "What do you know about Felix Schmidt's preferences?",
+        "turn": 2
+      },
+      {
+        "question": "Summarize Felix Schmidt's tech stack for me.",
+        "turn": 3
+      },
+      {
+        "question": "Can you remind me about Felix Schmidt's setup?",
+        "turn": 4
+      },
+      {
+        "question": "Can you remind me about Felix Schmidt's setup?",
+        "turn": 5
+      },
+      {
+        "question": "What tools does Felix Schmidt use?",
+        "turn": 6
+      },
+      {
+        "question": "Tell me about Felix Schmidt's current project.",
+        "turn": 7
+      },
+      {
+        "question": "Summarize Felix Schmidt's tech stack for me.",
+        "turn": 8
+      },
+      {
+        "question": "What do you know about Felix Schmidt's preferences?",
+        "turn": 9
+      },
+      {
+        "question": "Summarize Felix Schmidt's tech stack for me.",
+        "turn": 10
+      },
+      {
+        "question": "What tools does Felix Schmidt use?",
+        "turn": 11
+      },
+      {
+        "question": "Summarize Felix Schmidt's tech stack for me.",
+        "turn": 12
+      },
+      {
+        "question": "What do you know about Felix Schmidt's preferences?",
+        "turn": 13
+      },
+      {
+        "question": "What do you know about Felix Schmidt's preferences?",
+        "turn": 14
+      },
+      {
+        "question": "Tell me about Felix Schmidt's current project.",
+        "turn": 15
+      },
+      {
+        "question": "Tell me about Felix Schmidt's current project.",
+        "turn": 16
+      },
+      {
+        "question": "What tools does Felix Schmidt use?",
+        "turn": 17
+      },
+      {
+        "question": "Tell me about Felix Schmidt's current project.",
+        "turn": 18
+      },
+      {
+        "question": "Can you remind me about Felix Schmidt's setup?",
+        "turn": 19
+      }
+    ],
+    "metadata": {
+      "total_turns": 20,
+      "established_facts_by_turn_5": [
+        "Uses Vue 3 with Composition API for the frontend",
+        "Uses UnoCSS for styling",
+        "Uses Vite as the frontend build tool",
+        "Uses Vue I18n for internationalization",
+        "Uses Pinia for state management"
+      ]
+    }
+  },
+  {
+    "scenario_id": "noise-p039-secrets-heavy",
+    "scenario_type": "noise-resistance",
+    "conversation_history": [
+      {
+        "session_id": "s001",
+        "date": "2025-01-05",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I reverse a linked list?"
+          },
+          {
+            "role": "assistant",
+            "content": "Iterate through, reassigning each node's next pointer to the previous node."
           }
         ]
       },
       {
         "session_id": "s002",
+        "date": "2025-01-07",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the weather like today?"
+          },
+          {
+            "role": "assistant",
+            "content": "I don't have access to real-time weather data, but you can check weather.com."
+          }
+        ]
+      },
+      {
+        "session_id": "s003",
+        "date": "2025-01-09",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What are environment variables used for?"
+          },
+          {
+            "role": "assistant",
+            "content": "Storing configuration like API keys, database URLs, and feature flags outside the code."
+          }
+        ]
+      },
+      {
+        "session_id": "s004",
+        "date": "2025-01-11",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What are some good VS Code extensions?"
+          },
+          {
+            "role": "assistant",
+            "content": "Popular ones: Prettier, ESLint, GitLens, and Thunder Client."
+          }
+        ]
+      },
+      {
+        "session_id": "s005",
+        "date": "2025-01-13",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I read a file in Python?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `with open('file.txt') as f: content = f.read()`."
+          }
+        ]
+      },
+      {
+        "session_id": "s006",
+        "date": "2025-01-15",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the weather like today?"
+          },
+          {
+            "role": "assistant",
+            "content": "I don't have access to real-time weather data, but you can check weather.com."
+          }
+        ]
+      },
+      {
+        "session_id": "s007",
+        "date": "2025-01-17",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I set up SSH keys for GitHub?"
+          },
+          {
+            "role": "assistant",
+            "content": "Run `ssh-keygen -t ed25519`, then add the public key to GitHub Settings > SSH Keys."
+          }
+        ]
+      },
+      {
+        "session_id": "s008",
+        "date": "2025-01-19",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the weather like today?"
+          },
+          {
+            "role": "assistant",
+            "content": "I don't have access to real-time weather data, but you can check weather.com."
+          }
+        ]
+      },
+      {
+        "session_id": "s009",
+        "date": "2025-01-21",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me debug this KeyError?"
+          },
+          {
+            "role": "assistant",
+            "content": "A KeyError means the key doesn't exist. Use `.get(key, default)` instead."
+          }
+        ]
+      },
+      {
+        "session_id": "s010",
+        "date": "2025-01-23",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me debug this KeyError?"
+          },
+          {
+            "role": "assistant",
+            "content": "A KeyError means the key doesn't exist. Use `.get(key, default)` instead."
+          }
+        ]
+      },
+      {
+        "session_id": "s011",
+        "date": "2025-01-25",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What are some good VS Code extensions?"
+          },
+          {
+            "role": "assistant",
+            "content": "Popular ones: Prettier, ESLint, GitLens, and Thunder Client."
+          }
+        ]
+      },
+      {
+        "session_id": "s012",
+        "date": "2025-01-27",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the weather like today?"
+          },
+          {
+            "role": "assistant",
+            "content": "I don't have access to real-time weather data, but you can check weather.com."
+          }
+        ]
+      },
+      {
+        "session_id": "s013",
+        "date": "2025-01-29",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me debug this KeyError?"
+          },
+          {
+            "role": "assistant",
+            "content": "A KeyError means the key doesn't exist. Use `.get(key, default)` instead."
+          }
+        ]
+      },
+      {
+        "session_id": "s014",
+        "date": "2025-01-31",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the weather like today?"
+          },
+          {
+            "role": "assistant",
+            "content": "I don't have access to real-time weather data, but you can check weather.com."
+          }
+        ]
+      },
+      {
+        "session_id": "s015",
+        "date": "2025-02-02",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me debug this KeyError?"
+          },
+          {
+            "role": "assistant",
+            "content": "A KeyError means the key doesn't exist. Use `.get(key, default)` instead."
+          }
+        ]
+      },
+      {
+        "session_id": "s016",
+        "date": "2025-02-04",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How does garbage collection work?"
+          },
+          {
+            "role": "assistant",
+            "content": "The runtime periodically frees memory that's no longer referenced. Python uses reference counting + cycle detection."
+          }
+        ]
+      },
+      {
+        "session_id": "s017",
+        "date": "2025-02-06",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I reverse a linked list?"
+          },
+          {
+            "role": "assistant",
+            "content": "Iterate through, reassigning each node's next pointer to the previous node."
+          }
+        ]
+      },
+      {
+        "session_id": "s018",
+        "date": "2025-02-08",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's a good commit message format?"
+          },
+          {
+            "role": "assistant",
+            "content": "Convention: `type(scope): description`. Example: `fix(auth): handle expired tokens`."
+          }
+        ]
+      },
+      {
+        "session_id": "s019",
+        "date": "2025-02-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its enclosing scope."
+          }
+        ]
+      },
+      {
+        "session_id": "s020",
+        "date": "2025-02-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you explain what a closure is?"
+          },
+          {
+            "role": "assistant",
+            "content": "A closure is a function that captures variables from its enclosing scope."
+          }
+        ]
+      },
+      {
+        "session_id": "s021",
+        "date": "2025-02-14",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Uses HashiCorp Vault for secrets management"
+          },
+          {
+            "role": "assistant",
+            "content": "Noted, uses hashicorp vault for secrets management."
+          }
+        ]
+      },
+      {
+        "session_id": "s022",
+        "date": "2025-02-16",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I center a div in CSS?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `display: flex; justify-content: center; align-items: center;` on the parent."
+          }
+        ]
+      },
+      {
+        "session_id": "s023",
+        "date": "2025-02-18",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I set up SSH keys for GitHub?"
+          },
+          {
+            "role": "assistant",
+            "content": "Run `ssh-keygen -t ed25519`, then add the public key to GitHub Settings > SSH Keys."
+          }
+        ]
+      },
+      {
+        "session_id": "s024",
+        "date": "2025-02-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How does garbage collection work?"
+          },
+          {
+            "role": "assistant",
+            "content": "The runtime periodically frees memory that's no longer referenced. Python uses reference counting + cycle detection."
+          }
+        ]
+      },
+      {
+        "session_id": "s025",
+        "date": "2025-02-22",
+        "turns": [
+          {
+            "role": "user",
+            "content": "Can you help me write a regex to match email addresses?"
+          },
+          {
+            "role": "assistant",
+            "content": "Sure! Here's a common pattern: `^[\\w.-]+@[\\w.-]+\\.\\w+$`."
+          }
+        ]
+      },
+      {
+        "session_id": "s026",
+        "date": "2025-02-24",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I profile Python code?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `cProfile` for function-level profiling or `py-spy` for sampling profiling with flamegraphs."
+          }
+        ]
+      },
+      {
+        "session_id": "s027",
+        "date": "2025-02-26",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between a stack and a queue?"
+          },
+          {
+            "role": "assistant",
+            "content": "A stack is LIFO (last in, first out). A queue is FIFO (first in, first out)."
+          }
+        ]
+      },
+      {
+        "session_id": "s028",
+        "date": "2025-02-28",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I set up SSH keys for GitHub?"
+          },
+          {
+            "role": "assistant",
+            "content": "Run `ssh-keygen -t ed25519`, then add the public key to GitHub Settings > SSH Keys."
+          }
+        ]
+      },
+      {
+        "session_id": "s029",
+        "date": "2025-03-02",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I reverse a linked list?"
+          },
+          {
+            "role": "assistant",
+            "content": "Iterate through, reassigning each node's next pointer to the previous node."
+          }
+        ]
+      },
+      {
+        "session_id": "s030",
+        "date": "2025-03-04",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How does garbage collection work?"
+          },
+          {
+            "role": "assistant",
+            "content": "The runtime periodically frees memory that's no longer referenced. Python uses reference counting + cycle detection."
+          }
+        ]
+      },
+      {
+        "session_id": "s031",
+        "date": "2025-03-06",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the difference between HTTP and HTTPS?"
+          },
+          {
+            "role": "assistant",
+            "content": "HTTPS adds TLS encryption on top of HTTP. All modern sites should use HTTPS."
+          }
+        ]
+      },
+      {
+        "session_id": "s032",
+        "date": "2025-03-08",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I set up SSH keys for GitHub?"
+          },
+          {
+            "role": "assistant",
+            "content": "Run `ssh-keygen -t ed25519`, then add the public key to GitHub Settings > SSH Keys."
+          }
+        ]
+      },
+      {
+        "session_id": "s033",
+        "date": "2025-03-10",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What are environment variables used for?"
+          },
+          {
+            "role": "assistant",
+            "content": "Storing configuration like API keys, database URLs, and feature flags outside the code."
+          }
+        ]
+      },
+      {
+        "session_id": "s034",
+        "date": "2025-03-12",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What are some good VS Code extensions?"
+          },
+          {
+            "role": "assistant",
+            "content": "Popular ones: Prettier, ESLint, GitLens, and Thunder Client."
+          }
+        ]
+      },
+      {
+        "session_id": "s035",
+        "date": "2025-03-14",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I set up SSH keys for GitHub?"
+          },
+          {
+            "role": "assistant",
+            "content": "Run `ssh-keygen -t ed25519`, then add the public key to GitHub Settings > SSH Keys."
+          }
+        ]
+      },
+      {
+        "session_id": "s036",
+        "date": "2025-03-16",
+        "turns": [
+          {
+            "role": "user",
+            "content": "How do I read a file in Python?"
+          },
+          {
+            "role": "assistant",
+            "content": "Use `with open('file.txt') as f: content = f.read()`."
+          }
+        ]
+      },
+      {
+        "session_id": "s037",
+        "date": "2025-03-18",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's a microservice?"
+          },
+          {
+            "role": "assistant",
+            "content": "A small, independently deployable service that does one thing well and communicates via APIs."
+          }
+        ]
+      },
+      {
+        "session_id": "s038",
+        "date": "2025-03-20",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What are some good VS Code extensions?"
+          },
+          {
+            "role": "assistant",
+            "content": "Popular ones: Prettier, ESLint, GitLens, and Thunder Client."
+          }
+        ]
+      },
+      {
+        "session_id": "s039",
+        "date": "2025-03-22",
+        "turns": [
+          {
+            "role": "user",
+            "content": "What's the CAP theorem?"
+          },
+          {
+            "role": "assistant",
+            "content": "In a distributed system, you can only guarantee two of: Consistency, Availability, Partition tolerance."
+          }
+        ]
+      },
+      {
+        "session_id": "s040",
         "date": "2025-03-24",
         "turns": [
           {
             "role": "user",
-            "content": "Uses PostgreSQL for the primary database"
+            "content": "Can you help me debug this KeyError?"
           },
           {
             "role": "assistant",
-            "content": "Got it, uses postgresql for the primary database."
+            "content": "A KeyError means the key doesn't exist. Use `.get(key, default)` instead."
           }
         ]
       }
     ],
-    "question": "What database was Leila Hernandez using around February 2025?",
-    "expected_answer": "Uses Oracle Database for the primary database",
+    "question": "Which secrets did Hugo Takahashi go with?",
+    "expected_answer": "Uses HashiCorp Vault for secrets management",
     "metadata": {
-      "query_timestamp": "2025-02-22",
-      "belief_at_timestamp": "Uses Oracle Database for the primary database",
-      "current_belief": "Uses PostgreSQL for the primary database",
-      "difficulty": "explicit-timestamp"
+      "total_sessions": 40,
+      "signal_sessions": [
+        "s021"
+      ],
+      "noise_sessions": 39,
+      "signal_to_noise_ratio": 0.025,
+      "sub_category": "chitchat-filtering-heavy"
     }
   }
 ]
